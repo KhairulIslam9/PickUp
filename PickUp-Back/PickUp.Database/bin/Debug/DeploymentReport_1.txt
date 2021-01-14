@@ -1,0 +1,20 @@
+﻿** Met en surbrillance
+     Tables à reconstruire
+       Aucun
+     Index ordonnés en clusters à supprimer
+       Aucun
+     Index ordonnés en clusters à créer.
+       Aucun
+     Problèmes de données possibles
+       Aucun
+
+** Actions de l'utilisateur
+     Créer
+       [dbo].[Customer] (Table)
+       [dbo].[GetPostHash] (Fonction)
+       [dbo].[GetPreHash] (Fonction)
+       [dbo].[Login] (Procédure)
+       [dbo].[Register] (Procédure)
+       [dbo].[Update] (Procédure)
+
+** Actions de support

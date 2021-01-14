@@ -1,0 +1,9 @@
+C:\Users\kaiis\source\repos\PickUp\ADOLibrary\bin\Debug\netstandard2.0\ADOLibrary.deps.json
+C:\Users\kaiis\source\repos\PickUp\ADOLibrary\bin\Debug\netstandard2.0\ADOLibrary.dll
+C:\Users\kaiis\source\repos\PickUp\ADOLibrary\bin\Debug\netstandard2.0\ADOLibrary.pdb
+C:\Users\kaiis\source\repos\PickUp\ADOLibrary\obj\Debug\netstandard2.0\ADOLibrary.csprojAssemblyReference.cache
+C:\Users\kaiis\source\repos\PickUp\ADOLibrary\obj\Debug\netstandard2.0\ADOLibrary.AssemblyInfoInputs.cache
+C:\Users\kaiis\source\repos\PickUp\ADOLibrary\obj\Debug\netstandard2.0\ADOLibrary.AssemblyInfo.cs
+C:\Users\kaiis\source\repos\PickUp\ADOLibrary\obj\Debug\netstandard2.0\ADOLibrary.csproj.CoreCompileInputs.cache
+C:\Users\kaiis\source\repos\PickUp\ADOLibrary\obj\Debug\netstandard2.0\ADOLibrary.dll
+C:\Users\kaiis\source\repos\PickUp\ADOLibrary\obj\Debug\netstandard2.0\ADOLibrary.pdb

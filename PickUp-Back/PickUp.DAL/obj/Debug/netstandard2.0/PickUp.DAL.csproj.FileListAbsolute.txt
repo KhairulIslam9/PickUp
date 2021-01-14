@@ -1,0 +1,12 @@
+C:\Users\kaiis\source\repos\PickUp\PickUp.DAL\bin\Debug\netstandard2.0\PickUp.DAL.deps.json
+C:\Users\kaiis\source\repos\PickUp\PickUp.DAL\bin\Debug\netstandard2.0\PickUp.DAL.dll
+C:\Users\kaiis\source\repos\PickUp\PickUp.DAL\bin\Debug\netstandard2.0\PickUp.DAL.pdb
+C:\Users\kaiis\source\repos\PickUp\PickUp.DAL\bin\Debug\netstandard2.0\ADOLibrary.dll
+C:\Users\kaiis\source\repos\PickUp\PickUp.DAL\bin\Debug\netstandard2.0\ADOLibrary.pdb
+C:\Users\kaiis\source\repos\PickUp\PickUp.DAL\obj\Debug\netstandard2.0\PickUp.DAL.csprojAssemblyReference.cache
+C:\Users\kaiis\source\repos\PickUp\PickUp.DAL\obj\Debug\netstandard2.0\PickUp.DAL.AssemblyInfoInputs.cache
+C:\Users\kaiis\source\repos\PickUp\PickUp.DAL\obj\Debug\netstandard2.0\PickUp.DAL.AssemblyInfo.cs
+C:\Users\kaiis\source\repos\PickUp\PickUp.DAL\obj\Debug\netstandard2.0\PickUp.DAL.csproj.CoreCompileInputs.cache
+C:\Users\kaiis\source\repos\PickUp\PickUp.DAL\obj\Debug\netstandard2.0\PickUp.DAL.csproj.CopyComplete
+C:\Users\kaiis\source\repos\PickUp\PickUp.DAL\obj\Debug\netstandard2.0\PickUp.DAL.dll
+C:\Users\kaiis\source\repos\PickUp\PickUp.DAL\obj\Debug\netstandard2.0\PickUp.DAL.pdb

@@ -1,0 +1,8 @@
+﻿CREATE PROCEDURE [dbo].[GetAllEvent]
+	
+AS
+BEGIN
+	SELECT *
+	FROM V_Event
+END
+

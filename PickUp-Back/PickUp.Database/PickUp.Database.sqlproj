@@ -1,0 +1,106 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003" ToolsVersion="4.0">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <Name>PickUp.Database</Name>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectVersion>4.1</ProjectVersion>
+    <ProjectGuid>{3599d731-f836-4573-ae40-72ea6917dfc9}</ProjectGuid>
+    <DSP>Microsoft.Data.Tools.Schema.Sql.Sql130DatabaseSchemaProvider</DSP>
+    <OutputType>Database</OutputType>
+    <RootPath>
+    </RootPath>
+    <RootNamespace>PickUp.Database</RootNamespace>
+    <AssemblyName>PickUp.Database</AssemblyName>
+    <ModelCollation>1033, CI</ModelCollation>
+    <DefaultFileStructure>BySchemaAndSchemaType</DefaultFileStructure>
+    <DeployToDatabase>True</DeployToDatabase>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <TargetLanguage>CS</TargetLanguage>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <SqlServerVerification>False</SqlServerVerification>
+    <IncludeCompositeObjects>True</IncludeCompositeObjects>
+    <TargetDatabaseSet>True</TargetDatabaseSet>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <OutputPath>bin\Release\</OutputPath>
+    <BuildScriptName>$(MSBuildProjectName).sql</BuildScriptName>
+    <TreatWarningsAsErrors>False</TreatWarningsAsErrors>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <DefineDebug>false</DefineDebug>
+    <DefineTrace>true</DefineTrace>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <OutputPath>bin\Debug\</OutputPath>
+    <BuildScriptName>$(MSBuildProjectName).sql</BuildScriptName>
+    <TreatWarningsAsErrors>false</TreatWarningsAsErrors>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <DefineDebug>true</DefineDebug>
+    <DefineTrace>true</DefineTrace>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">11.0</VisualStudioVersion>
+    <!-- Default to the v11.0 targets path if the targets file for the current VS version is not found -->
+    <SSDTExists Condition="Exists('$(MSBuildExtensionsPath)\Microsoft\VisualStudio\v$(VisualStudioVersion)\SSDT\Microsoft.Data.Tools.Schema.SqlTasks.targets')">True</SSDTExists>
+    <VisualStudioVersion Condition="'$(SSDTExists)' == ''">11.0</VisualStudioVersion>
+  </PropertyGroup>
+  <Import Condition="'$(SQLDBExtensionsRefPath)' != ''" Project="$(SQLDBExtensionsRefPath)\Microsoft.Data.Tools.Schema.SqlTasks.targets" />
+  <Import Condition="'$(SQLDBExtensionsRefPath)' == ''" Project="$(MSBuildExtensionsPath)\Microsoft\VisualStudio\v$(VisualStudioVersion)\SSDT\Microsoft.Data.Tools.Schema.SqlTasks.targets" />
+  <ItemGroup>
+    <Folder Include="Properties" />
+    <Folder Include="Views" />
+    <Folder Include="Tables" />
+    <Folder Include="Programmability" />
+    <Folder Include="Programmability\Functions" />
+    <Folder Include="Programmability\StoredProcedures" />
+    <Folder Include="Scripts" />
+    <Folder Include="Programmability\StoredProcedures\Customer" />
+    <Folder Include="Programmability\StoredProcedures\Category" />
+    <Folder Include="Programmability\StoredProcedures\Reservation" />
+    <Folder Include="Programmability\StoredProcedures\User" />
+    <Folder Include="Programmability\StoredProcedures\PickReservation" />
+    <Folder Include="Programmability\StoredProcedures\Event" />
+  </ItemGroup>
+  <ItemGroup>
+    <Build Include="Tables\Customer.sql" />
+    <Build Include="Programmability\Functions\GetPostHash.sql" />
+    <Build Include="Programmability\Functions\GetPreHash.sql" />
+    <Build Include="Programmability\StoredProcedures\Customer\Login.sql" />
+    <Build Include="Programmability\StoredProcedures\Customer\Register.sql" />
+    <Build Include="Programmability\StoredProcedures\Customer\Update.sql" />
+    <Build Include="Tables\Category.sql" />
+    <Build Include="Tables\CategoryDetail.sql" />
+    <Build Include="Tables\PickReservation.sql" />
+    <Build Include="Tables\Reservation.sql" />
+    <Build Include="Tables\User.sql" />
+    <Build Include="Views\V_User.sql" />
+    <Build Include="Programmability\StoredProcedures\Category\GetAllCategory.sql" />
+    <Build Include="Programmability\StoredProcedures\Reservation\GetAllReservationByUser.sql" />
+    <Build Include="Programmability\StoredProcedures\Reservation\GetReservationByCustomer.sql" />
+    <Build Include="Programmability\StoredProcedures\Reservation\GetReservationByUser.sql" />
+    <Build Include="Programmability\StoredProcedures\Reservation\PostReservation.sql" />
+    <Build Include="Programmability\StoredProcedures\User\GetAllUser.sql" />
+    <Build Include="Programmability\StoredProcedures\User\GetAllUserAvailable.sql" />
+    <Build Include="Programmability\StoredProcedures\User\GetUserByCategory.sql" />
+    <Build Include="Programmability\StoredProcedures\User\GetUserById.sql" />
+    <Build Include="Programmability\StoredProcedures\PickReservation\PostPickReservation.sql" />
+    <Build Include="Programmability\StoredProcedures\PickReservation\DeletePickReservation.sql" />
+    <Build Include="Scripts\Script.PostDeployment1.sql" />
+    <Build Include="Tables\Event.sql" />
+    <Build Include="Tables\EventDetail.sql" />
+    <Build Include="Views\V_Event.sql" />
+    <Build Include="Programmability\StoredProcedures\Event\GetAllEvent.sql" />
+    <Build Include="Programmability\StoredProcedures\Event\GetEventByUser.sql" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="PickUp.Database.publish.xml" />
+  </ItemGroup>
+</Project>

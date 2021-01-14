@@ -1,0 +1,3169 @@
+<?xml version="1.0" encoding="utf-8"?>
+<DataSchemaModel FileFormatVersion="1.2" SchemaVersion="2.9" DspName="Microsoft.Data.Tools.Schema.Sql.Sql130DatabaseSchemaProvider" CollationLcid="1033" CollationCaseSensitive="False" xmlns="http://schemas.microsoft.com/sqlserver/dac/Serialization/2012/02">
+	<Header>
+		<CustomData Category="AnsiNulls">
+			<Metadata Name="AnsiNulls" Value="True" />
+		</CustomData>
+		<CustomData Category="QuotedIdentifier">
+			<Metadata Name="QuotedIdentifier" Value="True" />
+		</CustomData>
+		<CustomData Category="CompatibilityMode">
+			<Metadata Name="CompatibilityMode" Value="130" />
+		</CustomData>
+		<CustomData Category="Reference" Type="Assembly">
+			<Metadata Name="LogicalName" Value="PickUp.Database.dll" />
+			<Metadata Name="FileName" Value="C:\USERS\KAIIS\SOURCE\REPOS\PICKUP\PICKUP.DATABASE\OBJ\DEBUG\PICKUP.DATABASE.DLL" />
+			<Metadata Name="AssemblyName" Value="PickUp.Database" />
+			<Metadata Name="PermissionSet" Value="SAFE" />
+			<Metadata Name="Owner" Value="" />
+			<Metadata Name="GenerateSqlClrDdl" Value="True" />
+			<Metadata Name="IsVisible" Value="True" />
+			<Metadata Name="IsModelAware" Value="True" />
+			<Metadata Name="SkipCreationIfEmpty" Value="True" />
+			<Metadata Name="AssemblySymbolsName" Value="C:\Users\kaiis\source\repos\PickUp\PickUp.Database\obj\Debug\PickUp.Database.pdb" />
+		</CustomData>
+		<CustomData Category="SqlCmdVariables" Type="SqlCmdVariable" />
+	</Header>
+	<Model>
+		<Element Type="SqlCheckConstraint">
+			<Property Name="CheckExpressionScript">
+				<Value><![CDATA[NumPlaceAvailable > 0]]></Value>
+			</Property>
+			<Relationship Name="CheckExpressionDependencies">
+				<Entry>
+					<References Name="[dbo].[Reservation].[NumPlaceAvailable]" />
+				</Entry>
+			</Relationship>
+			<Relationship Name="DefiningTable">
+				<Entry>
+					<References Name="[dbo].[Reservation]" />
+				</Entry>
+			</Relationship>
+			<Annotation Type="SqlInlineConstraintAnnotation" Disambiguator="3" />
+		</Element>
+		<Element Type="SqlCheckConstraint">
+			<Property Name="CheckExpressionScript">
+				<Value><![CDATA[NumPlaceReserved <= NumPlaceAvailable]]></Value>
+			</Property>
+			<Relationship Name="CheckExpressionDependencies">
+				<Entry>
+					<References Name="[dbo].[Reservation].[NumPlaceReserved]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[Reservation].[NumPlaceAvailable]" />
+				</Entry>
+			</Relationship>
+			<Relationship Name="DefiningTable">
+				<Entry>
+					<References Name="[dbo].[Reservation]" />
+				</Entry>
+			</Relationship>
+			<Annotation Type="SqlInlineConstraintAnnotation" Disambiguator="4" />
+		</Element>
+		<Element Type="SqlDatabaseOptions">
+			<Property Name="Collation" Value="SQL_Latin1_General_CP1_CI_AS" />
+			<Property Name="IsAnsiNullDefaultOn" Value="True" />
+			<Property Name="IsAnsiNullsOn" Value="True" />
+			<Property Name="IsAnsiWarningsOn" Value="True" />
+			<Property Name="IsArithAbortOn" Value="True" />
+			<Property Name="IsConcatNullYieldsNullOn" Value="True" />
+			<Property Name="IsTornPageProtectionOn" Value="False" />
+			<Property Name="IsFullTextEnabled" Value="True" />
+			<Property Name="PageVerifyMode" Value="3" />
+			<Property Name="DefaultLanguage" Value="" />
+			<Property Name="DefaultFullTextLanguage" Value="" />
+			<Property Name="QueryStoreStaleQueryThreshold" Value="367" />
+			<Relationship Name="DefaultFilegroup">
+				<Entry>
+					<References ExternalSource="BuiltIns" Name="[PRIMARY]" />
+				</Entry>
+			</Relationship>
+		</Element>
+		<Element Type="SqlDefaultConstraint">
+			<Property Name="DefaultExpressionScript">
+				<Value><![CDATA[0]]></Value>
+			</Property>
+			<Relationship Name="DefiningTable">
+				<Entry>
+					<References Name="[dbo].[Reservation]" />
+				</Entry>
+			</Relationship>
+			<Relationship Name="ForColumn">
+				<Entry>
+					<References Name="[dbo].[Reservation].[NumPlaceReserved]" />
+				</Entry>
+			</Relationship>
+			<Annotation Type="SqlInlineConstraintAnnotation" Disambiguator="5" />
+		</Element>
+		<Element Type="SqlPrimaryKeyConstraint">
+			<Relationship Name="ColumnSpecifications">
+				<Entry>
+					<Element Type="SqlIndexedColumnSpecification">
+						<Relationship Name="Column">
+							<Entry>
+								<References Name="[dbo].[Customer].[CustomerId]" />
+							</Entry>
+						</Relationship>
+					</Element>
+				</Entry>
+			</Relationship>
+			<Relationship Name="DefiningTable">
+				<Entry>
+					<References Name="[dbo].[Customer]" />
+				</Entry>
+			</Relationship>
+			<Annotation Type="SqlInlineConstraintAnnotation" Disambiguator="6" />
+		</Element>
+		<Element Type="SqlPrimaryKeyConstraint">
+			<Relationship Name="ColumnSpecifications">
+				<Entry>
+					<Element Type="SqlIndexedColumnSpecification">
+						<Relationship Name="Column">
+							<Entry>
+								<References Name="[dbo].[Category].[CategoryId]" />
+							</Entry>
+						</Relationship>
+					</Element>
+				</Entry>
+			</Relationship>
+			<Relationship Name="DefiningTable">
+				<Entry>
+					<References Name="[dbo].[Category]" />
+				</Entry>
+			</Relationship>
+			<Annotation Type="SqlInlineConstraintAnnotation" Disambiguator="7" />
+		</Element>
+		<Element Type="SqlPrimaryKeyConstraint">
+			<Relationship Name="ColumnSpecifications">
+				<Entry>
+					<Element Type="SqlIndexedColumnSpecification">
+						<Relationship Name="Column">
+							<Entry>
+								<References Name="[dbo].[CategoryDetail].[CategoryDetailId]" />
+							</Entry>
+						</Relationship>
+					</Element>
+				</Entry>
+			</Relationship>
+			<Relationship Name="DefiningTable">
+				<Entry>
+					<References Name="[dbo].[CategoryDetail]" />
+				</Entry>
+			</Relationship>
+			<Annotation Type="SqlInlineConstraintAnnotation" Disambiguator="8" />
+		</Element>
+		<Element Type="SqlPrimaryKeyConstraint">
+			<Relationship Name="ColumnSpecifications">
+				<Entry>
+					<Element Type="SqlIndexedColumnSpecification">
+						<Relationship Name="Column">
+							<Entry>
+								<References Name="[dbo].[PickReservation].[ReservationId]" />
+							</Entry>
+						</Relationship>
+					</Element>
+				</Entry>
+				<Entry>
+					<Element Type="SqlIndexedColumnSpecification">
+						<Relationship Name="Column">
+							<Entry>
+								<References Name="[dbo].[PickReservation].[CustomerId]" />
+							</Entry>
+						</Relationship>
+					</Element>
+				</Entry>
+			</Relationship>
+			<Relationship Name="DefiningTable">
+				<Entry>
+					<References Name="[dbo].[PickReservation]" />
+				</Entry>
+			</Relationship>
+			<Annotation Type="SqlInlineConstraintAnnotation" Disambiguator="9" />
+		</Element>
+		<Element Type="SqlPrimaryKeyConstraint">
+			<Relationship Name="ColumnSpecifications">
+				<Entry>
+					<Element Type="SqlIndexedColumnSpecification">
+						<Relationship Name="Column">
+							<Entry>
+								<References Name="[dbo].[Reservation].[ReservationId]" />
+							</Entry>
+						</Relationship>
+					</Element>
+				</Entry>
+			</Relationship>
+			<Relationship Name="DefiningTable">
+				<Entry>
+					<References Name="[dbo].[Reservation]" />
+				</Entry>
+			</Relationship>
+			<Annotation Type="SqlInlineConstraintAnnotation" Disambiguator="10" />
+		</Element>
+		<Element Type="SqlPrimaryKeyConstraint">
+			<Relationship Name="ColumnSpecifications">
+				<Entry>
+					<Element Type="SqlIndexedColumnSpecification">
+						<Relationship Name="Column">
+							<Entry>
+								<References Name="[dbo].[User].[UserId]" />
+							</Entry>
+						</Relationship>
+					</Element>
+				</Entry>
+			</Relationship>
+			<Relationship Name="DefiningTable">
+				<Entry>
+					<References Name="[dbo].[User]" />
+				</Entry>
+			</Relationship>
+			<Annotation Type="SqlInlineConstraintAnnotation" Disambiguator="11" />
+		</Element>
+		<Element Type="SqlPrimaryKeyConstraint">
+			<Relationship Name="ColumnSpecifications">
+				<Entry>
+					<Element Type="SqlIndexedColumnSpecification">
+						<Relationship Name="Column">
+							<Entry>
+								<References Name="[dbo].[Event].[EventId]" />
+							</Entry>
+						</Relationship>
+					</Element>
+				</Entry>
+				<Entry>
+					<Element Type="SqlIndexedColumnSpecification">
+						<Relationship Name="Column">
+							<Entry>
+								<References Name="[dbo].[Event].[UserId]" />
+							</Entry>
+						</Relationship>
+					</Element>
+				</Entry>
+			</Relationship>
+			<Relationship Name="DefiningTable">
+				<Entry>
+					<References Name="[dbo].[Event]" />
+				</Entry>
+			</Relationship>
+			<Annotation Type="SqlInlineConstraintAnnotation" Disambiguator="12" />
+		</Element>
+		<Element Type="SqlPrimaryKeyConstraint">
+			<Relationship Name="ColumnSpecifications">
+				<Entry>
+					<Element Type="SqlIndexedColumnSpecification">
+						<Relationship Name="Column">
+							<Entry>
+								<References Name="[dbo].[EventDetail].[EventId]" />
+							</Entry>
+						</Relationship>
+					</Element>
+				</Entry>
+			</Relationship>
+			<Relationship Name="DefiningTable">
+				<Entry>
+					<References Name="[dbo].[EventDetail]" />
+				</Entry>
+			</Relationship>
+			<Annotation Type="SqlInlineConstraintAnnotation" Disambiguator="13" />
+		</Element>
+		<Element Type="SqlUniqueConstraint">
+			<Relationship Name="ColumnSpecifications">
+				<Entry>
+					<Element Type="SqlIndexedColumnSpecification">
+						<Relationship Name="Column">
+							<Entry>
+								<References Name="[dbo].[Customer].[Email]" />
+							</Entry>
+						</Relationship>
+					</Element>
+				</Entry>
+			</Relationship>
+			<Relationship Name="DefiningTable">
+				<Entry>
+					<References Name="[dbo].[Customer]" />
+				</Entry>
+			</Relationship>
+			<Annotation Type="SqlInlineConstraintAnnotation" Disambiguator="14" />
+		</Element>
+		<Element Type="SqlTable" Name="[dbo].[Category]">
+			<Property Name="IsAnsiNullsOn" Value="True" />
+			<Relationship Name="Columns">
+				<Entry>
+					<Element Type="SqlSimpleColumn" Name="[dbo].[Category].[CategoryId]">
+						<Property Name="IsNullable" Value="False" />
+						<Property Name="IsIdentity" Value="True" />
+						<Relationship Name="TypeSpecifier">
+							<Entry>
+								<Element Type="SqlTypeSpecifier">
+									<Relationship Name="Type">
+										<Entry>
+											<References ExternalSource="BuiltIns" Name="[int]" />
+										</Entry>
+									</Relationship>
+								</Element>
+							</Entry>
+						</Relationship>
+						<AttachedAnnotation Disambiguator="7" />
+					</Element>
+				</Entry>
+				<Entry>
+					<Element Type="SqlSimpleColumn" Name="[dbo].[Category].[UserId]">
+						<Property Name="IsNullable" Value="False" />
+						<Relationship Name="TypeSpecifier">
+							<Entry>
+								<Element Type="SqlTypeSpecifier">
+									<Relationship Name="Type">
+										<Entry>
+											<References ExternalSource="BuiltIns" Name="[int]" />
+										</Entry>
+									</Relationship>
+								</Element>
+							</Entry>
+						</Relationship>
+					</Element>
+				</Entry>
+				<Entry>
+					<Element Type="SqlSimpleColumn" Name="[dbo].[Category].[CategoryDetailId]">
+						<Property Name="IsNullable" Value="False" />
+						<Relationship Name="TypeSpecifier">
+							<Entry>
+								<Element Type="SqlTypeSpecifier">
+									<Relationship Name="Type">
+										<Entry>
+											<References ExternalSource="BuiltIns" Name="[int]" />
+										</Entry>
+									</Relationship>
+								</Element>
+							</Entry>
+						</Relationship>
+					</Element>
+				</Entry>
+			</Relationship>
+			<Relationship Name="Schema">
+				<Entry>
+					<References ExternalSource="BuiltIns" Name="[dbo]" />
+				</Entry>
+			</Relationship>
+			<Annotation Type="SqlInlineConstraintAnnotation" Disambiguator="15" />
+			<Annotation Type="SqlInlineConstraintAnnotation" Disambiguator="16" />
+		</Element>
+		<Element Type="SqlTable" Name="[dbo].[CategoryDetail]">
+			<Property Name="IsAnsiNullsOn" Value="True" />
+			<Relationship Name="Columns">
+				<Entry>
+					<Element Type="SqlSimpleColumn" Name="[dbo].[CategoryDetail].[CategoryDetailId]">
+						<Property Name="IsNullable" Value="False" />
+						<Property Name="IsIdentity" Value="True" />
+						<Relationship Name="TypeSpecifier">
+							<Entry>
+								<Element Type="SqlTypeSpecifier">
+									<Relationship Name="Type">
+										<Entry>
+											<References ExternalSource="BuiltIns" Name="[int]" />
+										</Entry>
+									</Relationship>
+								</Element>
+							</Entry>
+						</Relationship>
+						<AttachedAnnotation Disambiguator="8" />
+					</Element>
+				</Entry>
+				<Entry>
+					<Element Type="SqlSimpleColumn" Name="[dbo].[CategoryDetail].[CategoryName]">
+						<Property Name="IsNullable" Value="False" />
+						<Relationship Name="TypeSpecifier">
+							<Entry>
+								<Element Type="SqlTypeSpecifier">
+									<Property Name="Length" Value="75" />
+									<Relationship Name="Type">
+										<Entry>
+											<References ExternalSource="BuiltIns" Name="[nvarchar]" />
+										</Entry>
+									</Relationship>
+								</Element>
+							</Entry>
+						</Relationship>
+					</Element>
+				</Entry>
+			</Relationship>
+			<Relationship Name="Schema">
+				<Entry>
+					<References ExternalSource="BuiltIns" Name="[dbo]" />
+				</Entry>
+			</Relationship>
+		</Element>
+		<Element Type="SqlScalarFunction" Name="[dbo].[ConvertDate]">
+			<Property Name="IsAnsiNullsOn" Value="True" />
+			<Relationship Name="BodyDependencies">
+				<Entry>
+					<References ExternalSource="BuiltIns" Name="[nvarchar]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[ConvertDate].[@Date]" />
+				</Entry>
+			</Relationship>
+			<Relationship Name="FunctionBody">
+				<Entry>
+					<Element Type="SqlScriptFunctionImplementation">
+						<Property Name="BodyScript">
+							<Value><![CDATA[
+BEGIN
+	RETURN CONVERT(NVARCHAR(50), @Date, 101)
+END]]></Value>
+						</Property>
+						<Annotation Type="SysCommentsObjectAnnotation">
+							<Property Name="Length" Value="139" />
+							<Property Name="StartLine" Value="1" />
+							<Property Name="StartColumn" Value="1" />
+							<Property Name="HeaderContents" Value="CREATE FUNCTION [dbo].[ConvertDate]&#xD;&#xA;(&#xD;&#xA;&#x9;@Date DATETIME&#xD;&#xA;)&#xD;&#xA;RETURNS NVARCHAR(50)&#xD;&#xA;AS" />
+						</Annotation>
+					</Element>
+				</Entry>
+			</Relationship>
+			<Relationship Name="Parameters">
+				<Entry>
+					<Element Type="SqlSubroutineParameter" Name="[dbo].[ConvertDate].[@Date]">
+						<Relationship Name="Type">
+							<Entry>
+								<Element Type="SqlTypeSpecifier">
+									<Relationship Name="Type">
+										<Entry>
+											<References ExternalSource="BuiltIns" Name="[datetime]" />
+										</Entry>
+									</Relationship>
+								</Element>
+							</Entry>
+						</Relationship>
+					</Element>
+				</Entry>
+			</Relationship>
+			<Relationship Name="Schema">
+				<Entry>
+					<References ExternalSource="BuiltIns" Name="[dbo]" />
+				</Entry>
+			</Relationship>
+			<Relationship Name="Type">
+				<Entry>
+					<Element Type="SqlTypeSpecifier">
+						<Property Name="Length" Value="50" />
+						<Relationship Name="Type">
+							<Entry>
+								<References ExternalSource="BuiltIns" Name="[nvarchar]" />
+							</Entry>
+						</Relationship>
+					</Element>
+				</Entry>
+			</Relationship>
+		</Element>
+		<Element Type="SqlScalarFunction" Name="[dbo].[ConvertTime]">
+			<Property Name="IsAnsiNullsOn" Value="True" />
+			<Relationship Name="BodyDependencies">
+				<Entry>
+					<References ExternalSource="BuiltIns" Name="[nvarchar]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[ConvertTime].[@Time]" />
+				</Entry>
+			</Relationship>
+			<Relationship Name="FunctionBody">
+				<Entry>
+					<Element Type="SqlScriptFunctionImplementation">
+						<Property Name="BodyScript">
+							<Value><![CDATA[
+BEGIN
+	RETURN CONVERT(NVARCHAR(50), @Time, 8)
+END]]></Value>
+						</Property>
+						<Annotation Type="SysCommentsObjectAnnotation">
+							<Property Name="Length" Value="137" />
+							<Property Name="StartLine" Value="1" />
+							<Property Name="StartColumn" Value="1" />
+							<Property Name="HeaderContents" Value="CREATE FUNCTION [dbo].[ConvertTime]&#xD;&#xA;(&#xD;&#xA;&#x9;@Time DATETIME&#xD;&#xA;)&#xD;&#xA;RETURNS NVARCHAR(50)&#xD;&#xA;AS" />
+						</Annotation>
+					</Element>
+				</Entry>
+			</Relationship>
+			<Relationship Name="Parameters">
+				<Entry>
+					<Element Type="SqlSubroutineParameter" Name="[dbo].[ConvertTime].[@Time]">
+						<Relationship Name="Type">
+							<Entry>
+								<Element Type="SqlTypeSpecifier">
+									<Relationship Name="Type">
+										<Entry>
+											<References ExternalSource="BuiltIns" Name="[datetime]" />
+										</Entry>
+									</Relationship>
+								</Element>
+							</Entry>
+						</Relationship>
+					</Element>
+				</Entry>
+			</Relationship>
+			<Relationship Name="Schema">
+				<Entry>
+					<References ExternalSource="BuiltIns" Name="[dbo]" />
+				</Entry>
+			</Relationship>
+			<Relationship Name="Type">
+				<Entry>
+					<Element Type="SqlTypeSpecifier">
+						<Property Name="Length" Value="50" />
+						<Relationship Name="Type">
+							<Entry>
+								<References ExternalSource="BuiltIns" Name="[nvarchar]" />
+							</Entry>
+						</Relationship>
+					</Element>
+				</Entry>
+			</Relationship>
+		</Element>
+		<Element Type="SqlTable" Name="[dbo].[Customer]">
+			<Property Name="IsAnsiNullsOn" Value="True" />
+			<Relationship Name="Columns">
+				<Entry>
+					<Element Type="SqlSimpleColumn" Name="[dbo].[Customer].[CustomerId]">
+						<Property Name="IsNullable" Value="False" />
+						<Property Name="IsIdentity" Value="True" />
+						<Relationship Name="TypeSpecifier">
+							<Entry>
+								<Element Type="SqlTypeSpecifier">
+									<Relationship Name="Type">
+										<Entry>
+											<References ExternalSource="BuiltIns" Name="[int]" />
+										</Entry>
+									</Relationship>
+								</Element>
+							</Entry>
+						</Relationship>
+						<AttachedAnnotation Disambiguator="6" />
+					</Element>
+				</Entry>
+				<Entry>
+					<Element Type="SqlSimpleColumn" Name="[dbo].[Customer].[FirstName]">
+						<Property Name="IsNullable" Value="False" />
+						<Relationship Name="TypeSpecifier">
+							<Entry>
+								<Element Type="SqlTypeSpecifier">
+									<Property Name="Length" Value="75" />
+									<Relationship Name="Type">
+										<Entry>
+											<References ExternalSource="BuiltIns" Name="[nvarchar]" />
+										</Entry>
+									</Relationship>
+								</Element>
+							</Entry>
+						</Relationship>
+					</Element>
+				</Entry>
+				<Entry>
+					<Element Type="SqlSimpleColumn" Name="[dbo].[Customer].[LastName]">
+						<Property Name="IsNullable" Value="False" />
+						<Relationship Name="TypeSpecifier">
+							<Entry>
+								<Element Type="SqlTypeSpecifier">
+									<Property Name="Length" Value="75" />
+									<Relationship Name="Type">
+										<Entry>
+											<References ExternalSource="BuiltIns" Name="[nvarchar]" />
+										</Entry>
+									</Relationship>
+								</Element>
+							</Entry>
+						</Relationship>
+					</Element>
+				</Entry>
+				<Entry>
+					<Element Type="SqlSimpleColumn" Name="[dbo].[Customer].[PhoneNum]">
+						<Property Name="IsNullable" Value="False" />
+						<Relationship Name="TypeSpecifier">
+							<Entry>
+								<Element Type="SqlTypeSpecifier">
+									<Property Name="Length" Value="50" />
+									<Relationship Name="Type">
+										<Entry>
+											<References ExternalSource="BuiltIns" Name="[nvarchar]" />
+										</Entry>
+									</Relationship>
+								</Element>
+							</Entry>
+						</Relationship>
+					</Element>
+				</Entry>
+				<Entry>
+					<Element Type="SqlSimpleColumn" Name="[dbo].[Customer].[Email]">
+						<Property Name="IsNullable" Value="False" />
+						<Relationship Name="TypeSpecifier">
+							<Entry>
+								<Element Type="SqlTypeSpecifier">
+									<Property Name="Length" Value="320" />
+									<Relationship Name="Type">
+										<Entry>
+											<References ExternalSource="BuiltIns" Name="[nvarchar]" />
+										</Entry>
+									</Relationship>
+								</Element>
+							</Entry>
+						</Relationship>
+						<AttachedAnnotation Disambiguator="14" />
+					</Element>
+				</Entry>
+				<Entry>
+					<Element Type="SqlSimpleColumn" Name="[dbo].[Customer].[Password]">
+						<Property Name="IsNullable" Value="False" />
+						<Relationship Name="TypeSpecifier">
+							<Entry>
+								<Element Type="SqlTypeSpecifier">
+									<Property Name="IsMax" Value="True" />
+									<Relationship Name="Type">
+										<Entry>
+											<References ExternalSource="BuiltIns" Name="[varbinary]" />
+										</Entry>
+									</Relationship>
+								</Element>
+							</Entry>
+						</Relationship>
+					</Element>
+				</Entry>
+				<Entry>
+					<Element Type="SqlSimpleColumn" Name="[dbo].[Customer].[Url]">
+						<Relationship Name="TypeSpecifier">
+							<Entry>
+								<Element Type="SqlTypeSpecifier">
+									<Property Name="IsMax" Value="True" />
+									<Relationship Name="Type">
+										<Entry>
+											<References ExternalSource="BuiltIns" Name="[nvarchar]" />
+										</Entry>
+									</Relationship>
+								</Element>
+							</Entry>
+						</Relationship>
+					</Element>
+				</Entry>
+				<Entry>
+					<Element Type="SqlSimpleColumn" Name="[dbo].[Customer].[ThumbnailUrl]">
+						<Relationship Name="TypeSpecifier">
+							<Entry>
+								<Element Type="SqlTypeSpecifier">
+									<Property Name="IsMax" Value="True" />
+									<Relationship Name="Type">
+										<Entry>
+											<References ExternalSource="BuiltIns" Name="[nvarchar]" />
+										</Entry>
+									</Relationship>
+								</Element>
+							</Entry>
+						</Relationship>
+					</Element>
+				</Entry>
+			</Relationship>
+			<Relationship Name="Schema">
+				<Entry>
+					<References ExternalSource="BuiltIns" Name="[dbo]" />
+				</Entry>
+			</Relationship>
+		</Element>
+		<Element Type="SqlProcedure" Name="[dbo].[DeletePickReservation]">
+			<Property Name="BodyScript">
+				<Value><![CDATA[
+BEGIN
+	--DELETE seulement 24h avant 
+	DECLARE @ResDate DATETIME,
+			@StartHour DATETIME
+
+	SELECT @ResDate = ResDate, @StartHour = StartHour
+	FROM Reservation
+	WHERE ReservationId = @ReservationId
+
+	IF (GETDATE() <  @ResDate)
+	BEGIN
+		IF(Convert(varchar, DATEADD(DAY, 1,GETDATE()), 101) = CONVERT(varchar, @ResDate, 101))
+		BEGIN
+			IF CONVERT(varchar, @StartHour, 8) > CONVERT(varchar,GetDATE(), 8) 
+			BEGIN
+				DELETE
+				FROM PickReservation
+				WHERE ReservationId = @ReservationId
+				AND CustomerId = @CustomerId
+			END
+		END
+		ELSE 
+		BEGIN
+			DELETE
+			FROM PickReservation
+			WHERE ReservationId = @ReservationId
+			AND CustomerId = @CustomerId
+		END
+	END
+END]]></Value>
+			</Property>
+			<Property Name="IsAnsiNullsOn" Value="True" />
+			<Relationship Name="BodyDependencies">
+				<Entry>
+					<References ExternalSource="BuiltIns" Name="[datetime]" />
+				</Entry>
+				<Entry>
+					<References ExternalSource="BuiltIns" Name="[datetime]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[Reservation]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[Reservation].[ResDate]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[Reservation].[StartHour]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[Reservation].[ReservationId]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[DeletePickReservation].[@ReservationId]" />
+				</Entry>
+				<Entry>
+					<References ExternalSource="BuiltIns" Name="[varchar]" />
+				</Entry>
+				<Entry>
+					<References ExternalSource="BuiltIns" Name="[varchar]" />
+				</Entry>
+				<Entry>
+					<References ExternalSource="BuiltIns" Name="[varchar]" />
+				</Entry>
+				<Entry>
+					<References ExternalSource="BuiltIns" Name="[varchar]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[PickReservation]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[PickReservation].[ReservationId]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[PickReservation].[CustomerId]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[DeletePickReservation].[@CustomerId]" />
+				</Entry>
+			</Relationship>
+			<Relationship Name="Parameters">
+				<Entry>
+					<Element Type="SqlSubroutineParameter" Name="[dbo].[DeletePickReservation].[@ReservationId]">
+						<Relationship Name="Type">
+							<Entry>
+								<Element Type="SqlTypeSpecifier">
+									<Relationship Name="Type">
+										<Entry>
+											<References ExternalSource="BuiltIns" Name="[int]" />
+										</Entry>
+									</Relationship>
+								</Element>
+							</Entry>
+						</Relationship>
+					</Element>
+				</Entry>
+				<Entry>
+					<Element Type="SqlSubroutineParameter" Name="[dbo].[DeletePickReservation].[@CustomerId]">
+						<Relationship Name="Type">
+							<Entry>
+								<Element Type="SqlTypeSpecifier">
+									<Relationship Name="Type">
+										<Entry>
+											<References ExternalSource="BuiltIns" Name="[int]" />
+										</Entry>
+									</Relationship>
+								</Element>
+							</Entry>
+						</Relationship>
+					</Element>
+				</Entry>
+			</Relationship>
+			<Relationship Name="Schema">
+				<Entry>
+					<References ExternalSource="BuiltIns" Name="[dbo]" />
+				</Entry>
+			</Relationship>
+			<Annotation Type="SysCommentsObjectAnnotation">
+				<Property Name="Length" Value="789" />
+				<Property Name="StartLine" Value="1" />
+				<Property Name="StartColumn" Value="1" />
+				<Property Name="HeaderContents" Value="CREATE PROCEDURE [dbo].[DeletePickReservation]&#xD;&#xA;&#x9;@ReservationId INT,&#xD;&#xA;&#x9;@CustomerId INT&#xD;&#xA;AS" />
+			</Annotation>
+		</Element>
+		<Element Type="SqlTable" Name="[dbo].[Event]">
+			<Property Name="IsAnsiNullsOn" Value="True" />
+			<Relationship Name="Columns">
+				<Entry>
+					<Element Type="SqlSimpleColumn" Name="[dbo].[Event].[EventId]">
+						<Property Name="IsNullable" Value="False" />
+						<Relationship Name="TypeSpecifier">
+							<Entry>
+								<Element Type="SqlTypeSpecifier">
+									<Relationship Name="Type">
+										<Entry>
+											<References ExternalSource="BuiltIns" Name="[int]" />
+										</Entry>
+									</Relationship>
+								</Element>
+							</Entry>
+						</Relationship>
+					</Element>
+				</Entry>
+				<Entry>
+					<Element Type="SqlSimpleColumn" Name="[dbo].[Event].[UserId]">
+						<Property Name="IsNullable" Value="False" />
+						<Relationship Name="TypeSpecifier">
+							<Entry>
+								<Element Type="SqlTypeSpecifier">
+									<Relationship Name="Type">
+										<Entry>
+											<References ExternalSource="BuiltIns" Name="[int]" />
+										</Entry>
+									</Relationship>
+								</Element>
+							</Entry>
+						</Relationship>
+					</Element>
+				</Entry>
+			</Relationship>
+			<Relationship Name="Schema">
+				<Entry>
+					<References ExternalSource="BuiltIns" Name="[dbo]" />
+				</Entry>
+			</Relationship>
+			<AttachedAnnotation Disambiguator="12" />
+			<Annotation Type="SqlInlineConstraintAnnotation" Disambiguator="17" />
+			<Annotation Type="SqlInlineConstraintAnnotation" Disambiguator="18" />
+		</Element>
+		<Element Type="SqlTable" Name="[dbo].[EventDetail]">
+			<Property Name="IsAnsiNullsOn" Value="True" />
+			<Relationship Name="Columns">
+				<Entry>
+					<Element Type="SqlSimpleColumn" Name="[dbo].[EventDetail].[EventId]">
+						<Property Name="IsNullable" Value="False" />
+						<Property Name="IsIdentity" Value="True" />
+						<Relationship Name="TypeSpecifier">
+							<Entry>
+								<Element Type="SqlTypeSpecifier">
+									<Relationship Name="Type">
+										<Entry>
+											<References ExternalSource="BuiltIns" Name="[int]" />
+										</Entry>
+									</Relationship>
+								</Element>
+							</Entry>
+						</Relationship>
+						<AttachedAnnotation Disambiguator="13" />
+					</Element>
+				</Entry>
+				<Entry>
+					<Element Type="SqlSimpleColumn" Name="[dbo].[EventDetail].[Name]">
+						<Property Name="IsNullable" Value="False" />
+						<Relationship Name="TypeSpecifier">
+							<Entry>
+								<Element Type="SqlTypeSpecifier">
+									<Property Name="Length" Value="50" />
+									<Relationship Name="Type">
+										<Entry>
+											<References ExternalSource="BuiltIns" Name="[nvarchar]" />
+										</Entry>
+									</Relationship>
+								</Element>
+							</Entry>
+						</Relationship>
+					</Element>
+				</Entry>
+				<Entry>
+					<Element Type="SqlSimpleColumn" Name="[dbo].[EventDetail].[Description]">
+						<Property Name="IsNullable" Value="False" />
+						<Relationship Name="TypeSpecifier">
+							<Entry>
+								<Element Type="SqlTypeSpecifier">
+									<Property Name="Length" Value="150" />
+									<Relationship Name="Type">
+										<Entry>
+											<References ExternalSource="BuiltIns" Name="[nvarchar]" />
+										</Entry>
+									</Relationship>
+								</Element>
+							</Entry>
+						</Relationship>
+					</Element>
+				</Entry>
+			</Relationship>
+			<Relationship Name="Schema">
+				<Entry>
+					<References ExternalSource="BuiltIns" Name="[dbo]" />
+				</Entry>
+			</Relationship>
+		</Element>
+		<Element Type="SqlForeignKeyConstraint" Name="[dbo].[FK_Category_CategoryDetail]">
+			<Relationship Name="Columns">
+				<Entry>
+					<References Name="[dbo].[Category].[CategoryDetailId]" />
+				</Entry>
+			</Relationship>
+			<Relationship Name="DefiningTable">
+				<Entry>
+					<References Name="[dbo].[Category]" />
+				</Entry>
+			</Relationship>
+			<Relationship Name="ForeignColumns">
+				<Entry>
+					<References Name="[dbo].[CategoryDetail].[CategoryDetailId]" />
+				</Entry>
+			</Relationship>
+			<Relationship Name="ForeignTable">
+				<Entry>
+					<References Name="[dbo].[CategoryDetail]" />
+				</Entry>
+			</Relationship>
+			<AttachedAnnotation Disambiguator="16" />
+		</Element>
+		<Element Type="SqlForeignKeyConstraint" Name="[dbo].[FK_Category_User]">
+			<Relationship Name="Columns">
+				<Entry>
+					<References Name="[dbo].[Category].[UserId]" />
+				</Entry>
+			</Relationship>
+			<Relationship Name="DefiningTable">
+				<Entry>
+					<References Name="[dbo].[Category]" />
+				</Entry>
+			</Relationship>
+			<Relationship Name="ForeignColumns">
+				<Entry>
+					<References Name="[dbo].[User].[UserId]" />
+				</Entry>
+			</Relationship>
+			<Relationship Name="ForeignTable">
+				<Entry>
+					<References Name="[dbo].[User]" />
+				</Entry>
+			</Relationship>
+			<AttachedAnnotation Disambiguator="15" />
+		</Element>
+		<Element Type="SqlForeignKeyConstraint" Name="[dbo].[FK_Event_EventDetail]">
+			<Relationship Name="Columns">
+				<Entry>
+					<References Name="[dbo].[Event].[EventId]" />
+				</Entry>
+			</Relationship>
+			<Relationship Name="DefiningTable">
+				<Entry>
+					<References Name="[dbo].[Event]" />
+				</Entry>
+			</Relationship>
+			<Relationship Name="ForeignColumns">
+				<Entry>
+					<References Name="[dbo].[EventDetail].[EventId]" />
+				</Entry>
+			</Relationship>
+			<Relationship Name="ForeignTable">
+				<Entry>
+					<References Name="[dbo].[EventDetail]" />
+				</Entry>
+			</Relationship>
+			<AttachedAnnotation Disambiguator="18" />
+		</Element>
+		<Element Type="SqlForeignKeyConstraint" Name="[dbo].[FK_Event_User]">
+			<Relationship Name="Columns">
+				<Entry>
+					<References Name="[dbo].[Event].[UserId]" />
+				</Entry>
+			</Relationship>
+			<Relationship Name="DefiningTable">
+				<Entry>
+					<References Name="[dbo].[Event]" />
+				</Entry>
+			</Relationship>
+			<Relationship Name="ForeignColumns">
+				<Entry>
+					<References Name="[dbo].[User].[UserId]" />
+				</Entry>
+			</Relationship>
+			<Relationship Name="ForeignTable">
+				<Entry>
+					<References Name="[dbo].[User]" />
+				</Entry>
+			</Relationship>
+			<AttachedAnnotation Disambiguator="17" />
+		</Element>
+		<Element Type="SqlForeignKeyConstraint" Name="[dbo].[FK_PickReservation_Customer]">
+			<Relationship Name="Columns">
+				<Entry>
+					<References Name="[dbo].[PickReservation].[CustomerId]" />
+				</Entry>
+			</Relationship>
+			<Relationship Name="DefiningTable">
+				<Entry>
+					<References Name="[dbo].[PickReservation]" />
+				</Entry>
+			</Relationship>
+			<Relationship Name="ForeignColumns">
+				<Entry>
+					<References Name="[dbo].[Customer].[CustomerId]" />
+				</Entry>
+			</Relationship>
+			<Relationship Name="ForeignTable">
+				<Entry>
+					<References Name="[dbo].[Customer]" />
+				</Entry>
+			</Relationship>
+			<Annotation Type="SqlInlineConstraintAnnotation" Disambiguator="19" />
+		</Element>
+		<Element Type="SqlForeignKeyConstraint" Name="[dbo].[FK_PickReservation_Reservation]">
+			<Relationship Name="Columns">
+				<Entry>
+					<References Name="[dbo].[PickReservation].[ReservationId]" />
+				</Entry>
+			</Relationship>
+			<Relationship Name="DefiningTable">
+				<Entry>
+					<References Name="[dbo].[PickReservation]" />
+				</Entry>
+			</Relationship>
+			<Relationship Name="ForeignColumns">
+				<Entry>
+					<References Name="[dbo].[Reservation].[ReservationId]" />
+				</Entry>
+			</Relationship>
+			<Relationship Name="ForeignTable">
+				<Entry>
+					<References Name="[dbo].[Reservation]" />
+				</Entry>
+			</Relationship>
+			<Annotation Type="SqlInlineConstraintAnnotation" Disambiguator="20" />
+		</Element>
+		<Element Type="SqlForeignKeyConstraint" Name="[dbo].[FK_Reservation_User]">
+			<Relationship Name="Columns">
+				<Entry>
+					<References Name="[dbo].[Reservation].[UserId]" />
+				</Entry>
+			</Relationship>
+			<Relationship Name="DefiningTable">
+				<Entry>
+					<References Name="[dbo].[Reservation]" />
+				</Entry>
+			</Relationship>
+			<Relationship Name="ForeignColumns">
+				<Entry>
+					<References Name="[dbo].[User].[UserId]" />
+				</Entry>
+			</Relationship>
+			<Relationship Name="ForeignTable">
+				<Entry>
+					<References Name="[dbo].[User]" />
+				</Entry>
+			</Relationship>
+			<Annotation Type="SqlInlineConstraintAnnotation" Disambiguator="21" />
+		</Element>
+		<Element Type="SqlProcedure" Name="[dbo].[GetAllCategory]">
+			<Property Name="BodyScript">
+				<Value><![CDATA[
+BEGIN
+	SELECT *
+	FROM CategoryDetail
+END]]></Value>
+			</Property>
+			<Property Name="IsAnsiNullsOn" Value="True" />
+			<Relationship Name="BodyDependencies">
+				<Entry>
+					<References Name="[dbo].[CategoryDetail]" />
+				</Entry>
+			</Relationship>
+			<Relationship Name="Schema">
+				<Entry>
+					<References ExternalSource="BuiltIns" Name="[dbo]" />
+				</Entry>
+			</Relationship>
+			<Annotation Type="SysCommentsObjectAnnotation">
+				<Property Name="Length" Value="91" />
+				<Property Name="StartLine" Value="1" />
+				<Property Name="StartColumn" Value="1" />
+				<Property Name="HeaderContents" Value="CREATE PROCEDURE [dbo].[GetAllCategory]&#xD;&#xA;&#x9;&#xD;&#xA;AS" />
+			</Annotation>
+		</Element>
+		<Element Type="SqlProcedure" Name="[dbo].[GetAllEvent]">
+			<Property Name="BodyScript">
+				<Value><![CDATA[
+BEGIN
+	SELECT *
+	FROM V_Event
+END]]></Value>
+			</Property>
+			<Property Name="IsAnsiNullsOn" Value="True" />
+			<Relationship Name="BodyDependencies">
+				<Entry>
+					<References Name="[dbo].[V_Event]" />
+				</Entry>
+			</Relationship>
+			<Relationship Name="Schema">
+				<Entry>
+					<References ExternalSource="BuiltIns" Name="[dbo]" />
+				</Entry>
+			</Relationship>
+			<Annotation Type="SysCommentsObjectAnnotation">
+				<Property Name="Length" Value="81" />
+				<Property Name="StartLine" Value="1" />
+				<Property Name="StartColumn" Value="1" />
+				<Property Name="HeaderContents" Value="CREATE PROCEDURE [dbo].[GetAllEvent]&#xD;&#xA;&#x9;&#xD;&#xA;AS" />
+			</Annotation>
+		</Element>
+		<Element Type="SqlProcedure" Name="[dbo].[GetAllReservationByUser]">
+			<Property Name="BodyScript">
+				<Value><![CDATA[
+BEGIN
+	-- Format 8 => HH:mm:SS
+	-- Format 101 => DD/MM/YYYY
+	-- DATEADD va lire la doc
+	SELECT  R.ReservationId, 
+	dbo.ConvertDate(R.ResDate) AS ResDate,
+	dbo.ConvertTime(R.StartHour) AS StartHour,
+	dbo.ConvertTime(R.EndHour) AS EndHour,
+	R.NumPlaceAvailable-R.NumPlaceReserved as NumPlaceAvailable
+	FROM Reservation R
+	WHERE R.UserId = @UserId
+	AND R.ResDate > DATEADD(DAY, -1, GETDATE())
+	AND R.NumPlaceReserved < R.NumPlaceAvailable
+	EXCEPT 
+	SELECT R.ReservationId, 
+	dbo.ConvertDate(R.ResDate) AS ResDate,
+	dbo.ConvertTime(R.StartHour) AS StartHour,
+	dbo.ConvertTime(R.EndHour) AS EndHour,
+	R.NumPlaceAvailable - R.NumPlaceReserved as NumPlaceAvailable
+	FROM Reservation R
+	WHERE R.UserId = @UserId
+	AND dbo.ConvertTime(EndHour) <  dbo.ConvertTime(GETDATE()) 
+	AND dbo.ConvertDate(R.ResDate) = dbo.ConvertDate(GETDATE())
+	ORDER BY ResDate, StartHour , EndHour
+END]]></Value>
+			</Property>
+			<Property Name="IsAnsiNullsOn" Value="True" />
+			<Relationship Name="BodyDependencies">
+				<Entry>
+					<References Name="[dbo].[Reservation]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[Reservation].[ReservationId]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[Reservation].[ResDate]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[ConvertDate]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[Reservation].[StartHour]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[ConvertTime]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[Reservation].[EndHour]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[ConvertTime]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[Reservation].[NumPlaceAvailable]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[Reservation].[NumPlaceReserved]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[Reservation].[UserId]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[GetAllReservationByUser].[@UserId]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[ConvertTime]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[Reservation].[EndHour]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[ConvertDate]" />
+				</Entry>
+			</Relationship>
+			<Relationship Name="Parameters">
+				<Entry>
+					<Element Type="SqlSubroutineParameter" Name="[dbo].[GetAllReservationByUser].[@UserId]">
+						<Relationship Name="Type">
+							<Entry>
+								<Element Type="SqlTypeSpecifier">
+									<Relationship Name="Type">
+										<Entry>
+											<References ExternalSource="BuiltIns" Name="[int]" />
+										</Entry>
+									</Relationship>
+								</Element>
+							</Entry>
+						</Relationship>
+					</Element>
+				</Entry>
+			</Relationship>
+			<Relationship Name="Schema">
+				<Entry>
+					<References ExternalSource="BuiltIns" Name="[dbo]" />
+				</Entry>
+			</Relationship>
+			<Annotation Type="SysCommentsObjectAnnotation">
+				<Property Name="Length" Value="960" />
+				<Property Name="StartLine" Value="1" />
+				<Property Name="StartColumn" Value="1" />
+				<Property Name="HeaderContents" Value="CREATE PROCEDURE [dbo].[GetAllReservationByUser]&#xD;&#xA;&#x9;@UserId INT&#xD;&#xA;AS" />
+			</Annotation>
+		</Element>
+		<Element Type="SqlProcedure" Name="[dbo].[GetAllUser]">
+			<Property Name="BodyScript">
+				<Value><![CDATA[
+BEGIN
+	SELECT *
+	From [V_User]
+END]]></Value>
+			</Property>
+			<Property Name="IsAnsiNullsOn" Value="True" />
+			<Relationship Name="BodyDependencies">
+				<Entry>
+					<References Name="[dbo].[V_User]" />
+				</Entry>
+			</Relationship>
+			<Relationship Name="Schema">
+				<Entry>
+					<References ExternalSource="BuiltIns" Name="[dbo]" />
+				</Entry>
+			</Relationship>
+			<Annotation Type="SysCommentsObjectAnnotation">
+				<Property Name="Length" Value="80" />
+				<Property Name="StartLine" Value="1" />
+				<Property Name="StartColumn" Value="1" />
+				<Property Name="HeaderContents" Value="CREATE PROCEDURE [dbo].[GetAllUser]&#xD;&#xA;&#xD;&#xA;AS" />
+			</Annotation>
+		</Element>
+		<Element Type="SqlProcedure" Name="[dbo].[GetAllUserAvailable]">
+			<Property Name="BodyScript">
+				<Value><![CDATA[
+BEGIN
+	SELECT U.*
+	FROM [V_User] U
+	WHERE U.UserId in ( SELECT R.UserId
+							FROM Reservation R
+							WHERE  CONVERT(varchar,GETDATE(), 8)
+							BETWEEN CONVERT(varchar, R.[StartHour], 8) AND CONVERT(varchar, R.[EndHour], 8) 
+							AND CONVERT(varchar, R.[ResDate], 101) = CONVERT(varchar, GETDATE(), 101))
+END]]></Value>
+			</Property>
+			<Property Name="IsAnsiNullsOn" Value="True" />
+			<Relationship Name="BodyDependencies">
+				<Entry>
+					<References Name="[dbo].[V_User]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[V_User].[UserId]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[Reservation]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[Reservation].[UserId]" />
+				</Entry>
+				<Entry>
+					<References ExternalSource="BuiltIns" Name="[varchar]" />
+				</Entry>
+				<Entry>
+					<References ExternalSource="BuiltIns" Name="[varchar]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[Reservation].[StartHour]" />
+				</Entry>
+				<Entry>
+					<References ExternalSource="BuiltIns" Name="[varchar]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[Reservation].[EndHour]" />
+				</Entry>
+				<Entry>
+					<References ExternalSource="BuiltIns" Name="[varchar]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[Reservation].[ResDate]" />
+				</Entry>
+				<Entry>
+					<References ExternalSource="BuiltIns" Name="[varchar]" />
+				</Entry>
+			</Relationship>
+			<Relationship Name="Schema">
+				<Entry>
+					<References ExternalSource="BuiltIns" Name="[dbo]" />
+				</Entry>
+			</Relationship>
+			<Annotation Type="SysCommentsObjectAnnotation">
+				<Property Name="Length" Value="375" />
+				<Property Name="StartLine" Value="1" />
+				<Property Name="StartColumn" Value="1" />
+				<Property Name="HeaderContents" Value="CREATE PROCEDURE [dbo].[GetAllUserAvailable]&#xD;&#xA;&#xD;&#xA;AS" />
+			</Annotation>
+		</Element>
+		<Element Type="SqlProcedure" Name="[dbo].[GetEventByUser]">
+			<Property Name="BodyScript">
+				<Value><![CDATA[
+BEGIN
+	SELECT *
+	FROM V_Event
+	WHERE V_Event.UserId = @UserId
+END]]></Value>
+			</Property>
+			<Property Name="IsAnsiNullsOn" Value="True" />
+			<Relationship Name="BodyDependencies">
+				<Entry>
+					<References Name="[dbo].[V_Event]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[V_Event].[UserId]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[GetEventByUser].[@UserId]" />
+				</Entry>
+			</Relationship>
+			<Relationship Name="Parameters">
+				<Entry>
+					<Element Type="SqlSubroutineParameter" Name="[dbo].[GetEventByUser].[@UserId]">
+						<Relationship Name="Type">
+							<Entry>
+								<Element Type="SqlTypeSpecifier">
+									<Relationship Name="Type">
+										<Entry>
+											<References ExternalSource="BuiltIns" Name="[int]" />
+										</Entry>
+									</Relationship>
+								</Element>
+							</Entry>
+						</Relationship>
+					</Element>
+				</Entry>
+			</Relationship>
+			<Relationship Name="Schema">
+				<Entry>
+					<References ExternalSource="BuiltIns" Name="[dbo]" />
+				</Entry>
+			</Relationship>
+			<Annotation Type="SysCommentsObjectAnnotation">
+				<Property Name="Length" Value="128" />
+				<Property Name="StartLine" Value="1" />
+				<Property Name="StartColumn" Value="1" />
+				<Property Name="HeaderContents" Value="CREATE PROCEDURE [dbo].[GetEventByUser]&#xD;&#xA;&#x9;@UserId int&#xD;&#xA;AS" />
+			</Annotation>
+		</Element>
+		<Element Type="SqlScalarFunction" Name="[dbo].[GetPostHash]">
+			<Property Name="IsAnsiNullsOn" Value="True" />
+			<Relationship Name="FunctionBody">
+				<Entry>
+					<Element Type="SqlScriptFunctionImplementation">
+						<Property Name="BodyScript">
+							<Value><![CDATA[
+BEGIN
+	RETURN N'mWTEVHHfgf68WWtme$y?v_f7v=bWvm6zJ@4cf^@nJdeRRfMAYK%&NT6NneFVKdhWQHCAU$tJXE7_Dv^gJ?yS2_E_G5t=Grt*gXzPFj_+@U6Aqv4@pTSBAng!RLucMn#X@ZrUHSAqx%63EBc?Xn!t9p5Pa4hEXuT7VVR%s+J8%XwwSE?4gPmzUTh5XvPa^=PH^UzfP^bH#H?b$Ht6zRz--c9MErWVhUh?#grdZ8qjnpDP3?wbS_Qxub3k7cgage_gKs?Ktc@P!YZU2hvc=e99+CDfepA$VaJm+JHs8R7J2kjQsJ6Wpq2wjn5T+Bu$y8UKnLR2Kp@Vpa3A69F%-kr2QV=tak*@FSYd?q$Y=n!uny&H+$++h%D+hnBr!qjnD9sm_55PS!dj5H@!4r*F%f8FDvP6CZ6Q#tCBruK_jH8AuPB$FuG4DyNQqdwYUAgMM*%t4DyhSd8kT!J?=a3*ueY5=DqDL6$_xMqq3Fx$*bhH5+xhn2wQcvvFLCAENNF5frM$Ge#ZkRZqHdvVGUa#qpVjRa+u#f%uCZWM!Zb!w!dh4HSyy=&D-EKuQ+#qmSpj6UKMzSs?-4En+%ULjbMfGzK?T7JS3Mn&LPHaF26c66gC5?T=YzKQH5#EftvgqV2dqWZR*EXEL#CZu&sfm7X7Dt-#aR8wbyY66Y2+eA_v^4sKjzev+FAWUE84RSdB7fwjBns&MyX%8u=#uNngQe^Ca*8K@aWq$Ug45fzUM%x!Qxm=3?An*vbqySeyj5v3Pdn-?+g?aYpXfjwM^r89v@r4Zwa7mNtaAS$H6bck$k?NCaShv8Kmc^#THNpNXP_98hKQ4*Gah%vFB-!57jkmdAF8VF3V_KB=*-%&$8mdJX_AsucySsGnDF3PFHK!dm@H+Q_2gqgmJAA4gdq*xcZrCk*zBjsCqN3^2rMQS2AbT?C?%Xu4DE#dJ2rDMJxtH#Q69N2FrRxw9N_E7MZ+QrkV4Z^%enZw9!NT$csc=W37RtgRc2kd^Gq^7&g?rwRtW&MV6=rX9wfMTJ22*TgHBtxxN5!%=-^RBrGP%yYcT_ELbGf4=SfAv-HAxRAWUFfCSE*xnB5N!RpcFt-6CjbXrNY?BJsWXcsfZNmp_kztDyz-MWrK#*MJT$Af==Z#s=xKc_G8Jqhr+Y3pEUrrBh!rsqNhX8BtMWZ*KvuXtULLB9X8yUCVMqc&uejteUfQeaj=!#X3jcH-&knWaV_fKF4*ptmb!297C*AM*NLcRq%EpWnY2_s*nmw-pfdeYvbSc5@PeZcHTpn64r6tEDX@EnYwpR_6cr?CZt2xABq?Cq@K$+Z#UD+x=aNJDD5Hk&8^vE$Qr@ZZ&KE26pGbbpETyFLsam*V4Y?$+U77e4$B7gBGhpfM$e@C6R7%-uxg6&%ym3x3+$2Rd$zbbwCR7e!A+MSxAx$V#6C7_DJspsDNhNppQvnceKLM8VSDqef7K8&ELbNcfE9%rsbMM3?u^&knZ$Uf*jRHYDyHJ2Bgna&E-Gxu+cuJ*+!e!K5avFARtvj!A6AYvbNrfWrCVjgJd9tsU5xq!$W3ZD4&BT7+3=TCnxGZ$-KY%24@sRtVyn_TJPCQMdmN8^rX!t6!W^4Jn#-UP9V56s5%Pa%&fw98Dqa4hUp$FfasY9-+^hRW+BQDthqJyu+AvLxFy!W-UDzuzxZc-uMjbsskLGBXcTKDmhfQ-wZgMG#aUzLdxBzvSmBW-ahtkK4$aGVEyhxCGGf$UT2nB7WpeRJ3CfSaGcD__2^xD4?kyG?jS5_du=!YzA@d2MFeVNdtfnmm%VyTFF2UMbCasp&-7mDL4gEAvhz*P*BK55HUTa*Rmu_au+hL397g+Ap&ekAzpwVr5uaekzTz@_n+6a*zLSbxCN4exm=Ey-b+88mu^zRuHBWBaSV387m*aR%XF$xAu3j&T2@6ddX7eyNvVR_we_ERsZT_vf%%DnF5mNYVH7ttuq23rED?4R&f6Ezn_z!3qT?LTnMSe%g^ZcAf&K_Rd5BUe6dkB?cz26^a76-6tYMn3g^qZzLCebf#fBn-atN&Bmu+j$P9$KCM';
+END]]></Value>
+						</Property>
+						<Annotation Type="SysCommentsObjectAnnotation">
+							<Property Name="Length" Value="2140" />
+							<Property Name="StartLine" Value="1" />
+							<Property Name="StartColumn" Value="1" />
+							<Property Name="HeaderContents" Value="CREATE FUNCTION [dbo].[GetPostHash]&#xD;&#xA;(&#xD;&#xA;)&#xD;&#xA;RETURNS NCHAR(2048)&#xD;&#xA;AS" />
+						</Annotation>
+					</Element>
+				</Entry>
+			</Relationship>
+			<Relationship Name="Schema">
+				<Entry>
+					<References ExternalSource="BuiltIns" Name="[dbo]" />
+				</Entry>
+			</Relationship>
+			<Relationship Name="Type">
+				<Entry>
+					<Element Type="SqlTypeSpecifier">
+						<Property Name="Length" Value="2048" />
+						<Relationship Name="Type">
+							<Entry>
+								<References ExternalSource="BuiltIns" Name="[nchar]" />
+							</Entry>
+						</Relationship>
+					</Element>
+				</Entry>
+			</Relationship>
+		</Element>
+		<Element Type="SqlScalarFunction" Name="[dbo].[GetPreHash]">
+			<Property Name="IsAnsiNullsOn" Value="True" />
+			<Relationship Name="FunctionBody">
+				<Entry>
+					<Element Type="SqlScriptFunctionImplementation">
+						<Property Name="BodyScript">
+							<Value><![CDATA[
+BEGIN
+	RETURN N'Rvd6S_Vexw8=&Zd@f&6huk-ed*TaYv%#By?vRT*=3u^?RR&w=qdK8K9M%9#6s?u?98H7MznANqz_wqATEycvqEDyFjLA$7yhX7GPw#ZpcTaGMaR45V5fPjRTJhUCYfcq4x2-K^tfZJm%=3z3F-5t32nA!ertE=yC*#9WjA^CfVbYJDwApxp=MNGv2#Rs3Jy!P3_mW-9Qs5Yq_S3!ttV6wdhKXA47yFr7YGu*tTc5v*Xayy!6s^SP8U+$-+aWBq!y@!=32?KpjP_?6C_YRv#2b8eE=!qL@&p9Uk2ng4*XsKEJyFTRWWfHxnk^&xs_&R2aKqv-4PvLJW?&=nDLHyunukXHVWhvR^2#HcDkR6?J%45cm_&CpVy+r*D$TXE7sTjLTehLN^RZjSQ4gq7h54aqTgEMD%Ej9&?Q_+PYktcTe?fwNgd^%-CwK*!^YG6K%jR!_MdybeLxEj4-VaXT*&tWURcgMgxNY^FHd5-Yr^%zxAn7AqtyKQbYP$pj^c?Z#x6tK%2r-fy+BW+v6nu^R@YUes8mh7^h%NWgMTw!5Wr6K5&5dMeG=H*&%p&AAVgVf!EnCgdy8XGhvCXMnQeqm795C-2_j?_xC#XYb=KqWzuTpP2e224ZthnWRYq#M75B^jVAH#5YjzDDrj85WJY&qF8Q_%L_*X7k?Q8JNTdS62XcZ8@GaV@Uvj!NAV?mCsjnnU-Bx6C=tjZPGFbquHXUP!bNR6qFeVyx$E3@VAdM9k9GstXJn7!%pu5fR%N5%_s4wKS!6%m@AXs_BbDR+??V!uw=jT?e2m#pqZTLgg#V^*u!zwy+UBR9^=_GE?bsdmGRpaGv!!v$V@?q4tLktLb$=HQ8UD6+4p!_UtxKUJHD%S*AP-yV$Nm3+Eu-b**e8JZVBTZ+$m7g$B&bSdTWPEj$5^g3q2=JCr!T$CuwuyW#CA*r6$rth!pqN_NNBa7f63Y!u%N+yFmCUvv!+7cN=bYKRyzbv&878b9X!NjN9GMt!TZMLuFjUVSB*L^Qm&ke%*EPW!KWGBWJJV6!bNcN5Pu=54ZsQM&4HqrX4y3?e6yLWbSzmuxD&cpAPmMQEJuumMjL7fa7%ae*Gq&5@7VA#$+K&!^wAjsNbWmW%Whw!WgSMbh6n^dRYsR-W!$QzcUF?NK+%kcuz^jDW&y^A!LVSU?YRsE^sKgt8Avp$dz?a-T7XKsSeAF48YMgaAzf=H8Y%N#bdZ8RhKp%2MeSkxk!r_3v*#mnMmq4BCFuZ3MBYE2QNGYNPHXmS%HuQPccw!8$k-RWL$2?aDndyY5yH^^w&6y#vS^FLwpPW37-6-=ch%jpBpPNpMe#Hh#uh?a=9YYpWFmMR&fK@8Hgu2GRbBeGxUZ5$a?54k+5+^gsfQh5ah=ev=YSa_D!5CaZb-e84Y8=jrU%&gj99BCn@aGpS&_3fZ^LgFg85FgJKXH7d&r9fp6b5g+T7y6TW4kc9xB%cNyKeftjbDBCvvnKBE@ZT_#J*b%pGNYv8uxe4Twg4*^g&EPVpYdKFaynnz9=4c5aY=Ms&az+!L3uwbdDD*sMu2qe&cQe_qLk736a!L=?_BY3$^kF#8egD%r?gRRkE^yKbe&GTnhYJuBHs?4+=p5aP$*bF4@dtb^YQwsMyX_UF^Czf-r6bM4Q#hnQTkeTmu#Z8chuZk9-&q_gK-95LKeAhVkk*4mj=R8vAU!ZAG&rpZ?BcBk#fgZm5w=Hcv43t?jtq*!&UkkH*f2kkB2rb-TBsf5weDVG=te=z?PG#NM3RE%G5GV6fd9*aaLQ4?dsk43cnCga2L?yYSGR6?A8s!DfSC6hDjpC_VPr3r2XEjuP&59S_#96J#3t84Q*Yr+e_+P$tzCLPUVtgqHVWcnMM3$q$2KMJ5-mrk^yTGQ!M=s?cZA+nFbJwA4XMK*Cs4dKf4gu&sF9@-aS9RDJv@!cRJXax8=PE?5r9aq9Qg+&_v@ydV8DheQv7kwx#3CcCD7UaVn++JvVEDuAPGjcs*+uHrXz3EvzM2fAyE#4YY*Q^M5&dS$Bcc4R%Y6RLyss#4%ngMJGesC#_w*bNZc5';
+END]]></Value>
+						</Property>
+						<Annotation Type="SysCommentsObjectAnnotation">
+							<Property Name="Length" Value="2139" />
+							<Property Name="StartLine" Value="1" />
+							<Property Name="StartColumn" Value="1" />
+							<Property Name="HeaderContents" Value="CREATE FUNCTION [dbo].[GetPreHash]&#xD;&#xA;(&#xD;&#xA;)&#xD;&#xA;RETURNS NCHAR(2048)&#xD;&#xA;AS" />
+						</Annotation>
+					</Element>
+				</Entry>
+			</Relationship>
+			<Relationship Name="Schema">
+				<Entry>
+					<References ExternalSource="BuiltIns" Name="[dbo]" />
+				</Entry>
+			</Relationship>
+			<Relationship Name="Type">
+				<Entry>
+					<Element Type="SqlTypeSpecifier">
+						<Property Name="Length" Value="2048" />
+						<Relationship Name="Type">
+							<Entry>
+								<References ExternalSource="BuiltIns" Name="[nchar]" />
+							</Entry>
+						</Relationship>
+					</Element>
+				</Entry>
+			</Relationship>
+		</Element>
+		<Element Type="SqlProcedure" Name="[dbo].[GetReservationByCustomer]">
+			<Property Name="BodyScript">
+				<Value><![CDATA[
+Begin
+	SELECT R.ReservationId,
+		   U.UserId, 
+		   U.[Name], 
+		   dbo.ConvertDate(R.ResDate) AS ResDate,
+		   dbo.ConvertTime(R.StartHour) AS StartHour,
+		   dbo.ConvertTime(R.EndHour) AS EndHour, 
+		   PR.NumPerson,
+		   R.NumPlaceAvailable-R.NumPlaceReserved as NumPlaceAvailable, 
+		   U.[Url]
+	From Reservation R, PickReservation PR, [User] U
+	Where R.UserId = U.UserId
+	and R.ReservationId = PR.ReservationId
+	and PR.CustomerId = @CustomerId
+	ORDER BY ResDate, StartHour , EndHour
+End]]></Value>
+			</Property>
+			<Property Name="IsAnsiNullsOn" Value="True" />
+			<Relationship Name="BodyDependencies">
+				<Entry>
+					<References Name="[dbo].[Reservation]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[PickReservation]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[User]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[Reservation].[ReservationId]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[User].[UserId]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[User].[Name]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[Reservation].[ResDate]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[ConvertDate]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[Reservation].[StartHour]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[ConvertTime]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[Reservation].[EndHour]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[ConvertTime]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[PickReservation].[NumPerson]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[Reservation].[NumPlaceAvailable]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[Reservation].[NumPlaceReserved]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[User].[Url]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[Reservation].[UserId]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[PickReservation].[ReservationId]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[PickReservation].[CustomerId]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[GetReservationByCustomer].[@CustomerId]" />
+				</Entry>
+			</Relationship>
+			<Relationship Name="Parameters">
+				<Entry>
+					<Element Type="SqlSubroutineParameter" Name="[dbo].[GetReservationByCustomer].[@CustomerId]">
+						<Property Name="DefaultExpressionScript">
+							<Value><![CDATA[0]]></Value>
+						</Property>
+						<Relationship Name="Type">
+							<Entry>
+								<Element Type="SqlTypeSpecifier">
+									<Relationship Name="Type">
+										<Entry>
+											<References ExternalSource="BuiltIns" Name="[int]" />
+										</Entry>
+									</Relationship>
+								</Element>
+							</Entry>
+						</Relationship>
+					</Element>
+				</Entry>
+			</Relationship>
+			<Relationship Name="Schema">
+				<Entry>
+					<References ExternalSource="BuiltIns" Name="[dbo]" />
+				</Entry>
+			</Relationship>
+			<Annotation Type="SysCommentsObjectAnnotation">
+				<Property Name="Length" Value="583" />
+				<Property Name="StartLine" Value="1" />
+				<Property Name="StartColumn" Value="1" />
+				<Property Name="HeaderContents" Value="CREATE PROCEDURE [dbo].[GetReservationByCustomer]&#xD;&#xA;&#x9;@CustomerId int = 0&#xD;&#xA;AS" />
+			</Annotation>
+		</Element>
+		<Element Type="SqlProcedure" Name="[dbo].[GetReservationByUser]">
+			<Property Name="BodyScript">
+				<Value><![CDATA[
+BEGIN
+	SELECT R.ReservationId, 
+		  C.CustomerId, 
+		  C.LastName, 
+		  C.FirstName, 
+		  C.Email, 
+		  C.PhoneNum,
+		  dbo.ConvertDate(R.ResDate) AS ResDate,
+		  dbo.ConvertTime(R.StartHour) AS StartHour,
+		  dbo.ConvertTime(R.EndHour) AS EndHour,
+		  PR.NumPerson,
+		  dbo.ConvertDate(PR.InputDate) AS InputDate
+	FROM Reservation R, PickReservation PR, [Customer] C
+	Where R.ReservationId = PR.ReservationId
+	and C.CustomerId = PR.CustomerId
+	and R.UserId = @UserId
+	ORDER BY R.ResDate, R.StartHour , R.EndHour
+END]]></Value>
+			</Property>
+			<Property Name="IsAnsiNullsOn" Value="True" />
+			<Relationship Name="BodyDependencies">
+				<Entry>
+					<References Name="[dbo].[Reservation]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[PickReservation]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[Customer]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[Reservation].[ReservationId]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[Customer].[CustomerId]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[Customer].[LastName]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[Customer].[FirstName]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[Customer].[Email]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[Customer].[PhoneNum]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[Reservation].[ResDate]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[ConvertDate]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[Reservation].[StartHour]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[ConvertTime]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[Reservation].[EndHour]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[ConvertTime]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[PickReservation].[NumPerson]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[PickReservation].[InputDate]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[ConvertDate]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[PickReservation].[ReservationId]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[PickReservation].[CustomerId]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[Reservation].[UserId]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[GetReservationByUser].[@UserId]" />
+				</Entry>
+			</Relationship>
+			<Relationship Name="Parameters">
+				<Entry>
+					<Element Type="SqlSubroutineParameter" Name="[dbo].[GetReservationByUser].[@UserId]">
+						<Relationship Name="Type">
+							<Entry>
+								<Element Type="SqlTypeSpecifier">
+									<Relationship Name="Type">
+										<Entry>
+											<References ExternalSource="BuiltIns" Name="[int]" />
+										</Entry>
+									</Relationship>
+								</Element>
+							</Entry>
+						</Relationship>
+					</Element>
+				</Entry>
+			</Relationship>
+			<Relationship Name="Schema">
+				<Entry>
+					<References ExternalSource="BuiltIns" Name="[dbo]" />
+				</Entry>
+			</Relationship>
+			<Annotation Type="SysCommentsObjectAnnotation">
+				<Property Name="Length" Value="598" />
+				<Property Name="StartLine" Value="1" />
+				<Property Name="StartColumn" Value="1" />
+				<Property Name="HeaderContents" Value="CREATE PROCEDURE [dbo].[GetReservationByUser]&#xD;&#xA;&#x9;@UserId Int&#xD;&#xA;AS" />
+			</Annotation>
+		</Element>
+		<Element Type="SqlProcedure" Name="[dbo].[GetUserByCategory]">
+			<Property Name="BodyScript">
+				<Value><![CDATA[
+BEGIN
+	SELECT U.*
+	FROM [V_User] U, Category C, CategoryDetail CD
+	where U.UserId = C.UserId 
+	and CD.CategoryDetailId = c.CategoryDetailId
+	and CD.CategoryDetailId = @CategoryId
+END]]></Value>
+			</Property>
+			<Property Name="IsAnsiNullsOn" Value="True" />
+			<Relationship Name="BodyDependencies">
+				<Entry>
+					<References Name="[dbo].[V_User]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[Category]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[CategoryDetail]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[V_User].[UserId]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[Category].[UserId]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[CategoryDetail].[CategoryDetailId]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[Category].[CategoryDetailId]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[GetUserByCategory].[@CategoryId]" />
+				</Entry>
+			</Relationship>
+			<Relationship Name="Parameters">
+				<Entry>
+					<Element Type="SqlSubroutineParameter" Name="[dbo].[GetUserByCategory].[@CategoryId]">
+						<Relationship Name="Type">
+							<Entry>
+								<Element Type="SqlTypeSpecifier">
+									<Relationship Name="Type">
+										<Entry>
+											<References ExternalSource="BuiltIns" Name="[int]" />
+										</Entry>
+									</Relationship>
+								</Element>
+							</Entry>
+						</Relationship>
+					</Element>
+				</Entry>
+			</Relationship>
+			<Relationship Name="Schema">
+				<Entry>
+					<References ExternalSource="BuiltIns" Name="[dbo]" />
+				</Entry>
+			</Relationship>
+			<Annotation Type="SysCommentsObjectAnnotation">
+				<Property Name="Length" Value="254" />
+				<Property Name="StartLine" Value="1" />
+				<Property Name="StartColumn" Value="1" />
+				<Property Name="HeaderContents" Value="CREATE PROCEDURE [dbo].[GetUserByCategory]&#xD;&#xA;&#x9;@CategoryId int&#xD;&#xA;AS" />
+			</Annotation>
+		</Element>
+		<Element Type="SqlProcedure" Name="[dbo].[GetUserById]">
+			<Property Name="BodyScript">
+				<Value><![CDATA[
+BEGIN
+	SELECT U.*
+	FROM [V_User] U
+	WHERE U.UserId = @UserId
+END]]></Value>
+			</Property>
+			<Property Name="IsAnsiNullsOn" Value="True" />
+			<Relationship Name="BodyDependencies">
+				<Entry>
+					<References Name="[dbo].[V_User]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[V_User].[UserId]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[GetUserById].[@UserId]" />
+				</Entry>
+			</Relationship>
+			<Relationship Name="Parameters">
+				<Entry>
+					<Element Type="SqlSubroutineParameter" Name="[dbo].[GetUserById].[@UserId]">
+						<Relationship Name="Type">
+							<Entry>
+								<Element Type="SqlTypeSpecifier">
+									<Relationship Name="Type">
+										<Entry>
+											<References ExternalSource="BuiltIns" Name="[int]" />
+										</Entry>
+									</Relationship>
+								</Element>
+							</Entry>
+						</Relationship>
+					</Element>
+				</Entry>
+			</Relationship>
+			<Relationship Name="Schema">
+				<Entry>
+					<References ExternalSource="BuiltIns" Name="[dbo]" />
+				</Entry>
+			</Relationship>
+			<Annotation Type="SysCommentsObjectAnnotation">
+				<Property Name="Length" Value="124" />
+				<Property Name="StartLine" Value="1" />
+				<Property Name="StartColumn" Value="1" />
+				<Property Name="HeaderContents" Value="CREATE PROCEDURE [dbo].[GetUserById]&#xD;&#xA;&#x9;@UserId INT&#xD;&#xA;AS" />
+			</Annotation>
+		</Element>
+		<Element Type="SqlProcedure" Name="[dbo].[Login]">
+			<Property Name="BodyScript">
+				<Value><![CDATA[
+BEGIN
+	SELECT C.[CustomerId], C.[FirstName], C.[LastName], C.[PhoneNum], 
+	C.[Email], C.[Url], C.[ThumbnailUrl]
+	FROM [Customer] C
+	WHERE [Email] = @Email 
+	and [Password] = HASHBYTES('SHA2_512', dbo.GetPreHash() + @Password + dbo.GetPostHash());
+END]]></Value>
+			</Property>
+			<Property Name="IsAnsiNullsOn" Value="True" />
+			<Relationship Name="BodyDependencies">
+				<Entry>
+					<References Name="[dbo].[Customer]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[Customer].[CustomerId]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[Customer].[FirstName]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[Customer].[LastName]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[Customer].[PhoneNum]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[Customer].[Email]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[Customer].[Url]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[Customer].[ThumbnailUrl]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[Customer].[Email]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[Login].[@Email]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[Customer].[Password]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[GetPreHash]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[Login].[@Password]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[GetPostHash]" />
+				</Entry>
+			</Relationship>
+			<Relationship Name="Parameters">
+				<Entry>
+					<Element Type="SqlSubroutineParameter" Name="[dbo].[Login].[@Email]">
+						<Relationship Name="Type">
+							<Entry>
+								<Element Type="SqlTypeSpecifier">
+									<Property Name="Length" Value="320" />
+									<Relationship Name="Type">
+										<Entry>
+											<References ExternalSource="BuiltIns" Name="[nvarchar]" />
+										</Entry>
+									</Relationship>
+								</Element>
+							</Entry>
+						</Relationship>
+					</Element>
+				</Entry>
+				<Entry>
+					<Element Type="SqlSubroutineParameter" Name="[dbo].[Login].[@Password]">
+						<Relationship Name="Type">
+							<Entry>
+								<Element Type="SqlTypeSpecifier">
+									<Property Name="Length" Value="50" />
+									<Relationship Name="Type">
+										<Entry>
+											<References ExternalSource="BuiltIns" Name="[nvarchar]" />
+										</Entry>
+									</Relationship>
+								</Element>
+							</Entry>
+						</Relationship>
+					</Element>
+				</Entry>
+			</Relationship>
+			<Relationship Name="Schema">
+				<Entry>
+					<References ExternalSource="BuiltIns" Name="[dbo]" />
+				</Entry>
+			</Relationship>
+			<Annotation Type="SysCommentsObjectAnnotation">
+				<Property Name="Length" Value="341" />
+				<Property Name="StartLine" Value="1" />
+				<Property Name="StartColumn" Value="1" />
+				<Property Name="HeaderContents" Value="CREATE PROCEDURE [dbo].[Login]&#xD;&#xA;&#x9;@Email NVARCHAR(320),&#xD;&#xA;&#x9;@Password NVARCHAR(50)&#xD;&#xA;AS" />
+			</Annotation>
+		</Element>
+		<Element Type="SqlTable" Name="[dbo].[PickReservation]">
+			<Property Name="IsAnsiNullsOn" Value="True" />
+			<Relationship Name="Columns">
+				<Entry>
+					<Element Type="SqlSimpleColumn" Name="[dbo].[PickReservation].[ReservationId]">
+						<Property Name="IsNullable" Value="False" />
+						<Relationship Name="TypeSpecifier">
+							<Entry>
+								<Element Type="SqlTypeSpecifier">
+									<Relationship Name="Type">
+										<Entry>
+											<References ExternalSource="BuiltIns" Name="[int]" />
+										</Entry>
+									</Relationship>
+								</Element>
+							</Entry>
+						</Relationship>
+					</Element>
+				</Entry>
+				<Entry>
+					<Element Type="SqlSimpleColumn" Name="[dbo].[PickReservation].[CustomerId]">
+						<Property Name="IsNullable" Value="False" />
+						<Relationship Name="TypeSpecifier">
+							<Entry>
+								<Element Type="SqlTypeSpecifier">
+									<Relationship Name="Type">
+										<Entry>
+											<References ExternalSource="BuiltIns" Name="[int]" />
+										</Entry>
+									</Relationship>
+								</Element>
+							</Entry>
+						</Relationship>
+					</Element>
+				</Entry>
+				<Entry>
+					<Element Type="SqlSimpleColumn" Name="[dbo].[PickReservation].[NumPerson]">
+						<Property Name="IsNullable" Value="False" />
+						<Relationship Name="TypeSpecifier">
+							<Entry>
+								<Element Type="SqlTypeSpecifier">
+									<Relationship Name="Type">
+										<Entry>
+											<References ExternalSource="BuiltIns" Name="[int]" />
+										</Entry>
+									</Relationship>
+								</Element>
+							</Entry>
+						</Relationship>
+					</Element>
+				</Entry>
+				<Entry>
+					<Element Type="SqlSimpleColumn" Name="[dbo].[PickReservation].[InputDate]">
+						<Property Name="IsNullable" Value="False" />
+						<Relationship Name="TypeSpecifier">
+							<Entry>
+								<Element Type="SqlTypeSpecifier">
+									<Relationship Name="Type">
+										<Entry>
+											<References ExternalSource="BuiltIns" Name="[datetime]" />
+										</Entry>
+									</Relationship>
+								</Element>
+							</Entry>
+						</Relationship>
+					</Element>
+				</Entry>
+			</Relationship>
+			<Relationship Name="Schema">
+				<Entry>
+					<References ExternalSource="BuiltIns" Name="[dbo]" />
+				</Entry>
+			</Relationship>
+			<AttachedAnnotation Disambiguator="9" />
+			<AttachedAnnotation Disambiguator="20" />
+			<AttachedAnnotation Disambiguator="19" />
+		</Element>
+		<Element Type="SqlProcedure" Name="[dbo].[PostPickReservation]">
+			<Property Name="BodyScript">
+				<Value><![CDATA[
+BEGIN
+	DEClARE @NumPlaceAvailable INT, 
+			@NumPlaceReserved INT, 
+			@Customer INT
+
+	SELECT  @NumPlaceAvailable = NumPlaceAvailable, @NumPlaceReserved = NumPlaceReserved 
+	FROM Reservation
+	WHERE ReservationId = @ReservationId
+
+	SELECT @Customer = CustomerId
+	FROM [Customer]
+	WHERE CustomerId = @CustomerId
+
+
+	IF (@NumPlaceAvailable >= @NumPlaceReserved + @NumPerson AND @Customer is not null)
+	BEGIN
+		IF NOT EXISTS ( SELECT * 
+						FROM PickReservation 
+						WHERE CustomerId = @CustomerId 
+						AND ReservationId = @ReservationId )
+		BEGIN
+			UPDATE Reservation
+			SET NumPlaceReserved = NumPlaceReserved + @NumPerson
+			FROM Reservation
+			WHERE ReservationId = @ReservationId
+		END
+
+		INSERT INTO PickReservation
+		VALUES(@ReservationId,@CustomerId,@NumPerson,GETDATE())
+	END
+END]]></Value>
+			</Property>
+			<Property Name="IsAnsiNullsOn" Value="True" />
+			<Relationship Name="BodyDependencies">
+				<Entry>
+					<References ExternalSource="BuiltIns" Name="[int]" />
+				</Entry>
+				<Entry>
+					<References ExternalSource="BuiltIns" Name="[int]" />
+				</Entry>
+				<Entry>
+					<References ExternalSource="BuiltIns" Name="[int]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[Reservation]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[Reservation].[NumPlaceAvailable]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[Reservation].[NumPlaceReserved]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[Reservation].[ReservationId]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[PostPickReservation].[@ReservationId]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[Customer]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[Customer].[CustomerId]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[PostPickReservation].[@CustomerId]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[PostPickReservation].[@NumPerson]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[PickReservation]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[PickReservation].[CustomerId]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[PickReservation].[ReservationId]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[PickReservation]" />
+				</Entry>
+			</Relationship>
+			<Relationship Name="Parameters">
+				<Entry>
+					<Element Type="SqlSubroutineParameter" Name="[dbo].[PostPickReservation].[@ReservationId]">
+						<Relationship Name="Type">
+							<Entry>
+								<Element Type="SqlTypeSpecifier">
+									<Relationship Name="Type">
+										<Entry>
+											<References ExternalSource="BuiltIns" Name="[int]" />
+										</Entry>
+									</Relationship>
+								</Element>
+							</Entry>
+						</Relationship>
+					</Element>
+				</Entry>
+				<Entry>
+					<Element Type="SqlSubroutineParameter" Name="[dbo].[PostPickReservation].[@CustomerId]">
+						<Relationship Name="Type">
+							<Entry>
+								<Element Type="SqlTypeSpecifier">
+									<Relationship Name="Type">
+										<Entry>
+											<References ExternalSource="BuiltIns" Name="[int]" />
+										</Entry>
+									</Relationship>
+								</Element>
+							</Entry>
+						</Relationship>
+					</Element>
+				</Entry>
+				<Entry>
+					<Element Type="SqlSubroutineParameter" Name="[dbo].[PostPickReservation].[@NumPerson]">
+						<Relationship Name="Type">
+							<Entry>
+								<Element Type="SqlTypeSpecifier">
+									<Relationship Name="Type">
+										<Entry>
+											<References ExternalSource="BuiltIns" Name="[int]" />
+										</Entry>
+									</Relationship>
+								</Element>
+							</Entry>
+						</Relationship>
+					</Element>
+				</Entry>
+			</Relationship>
+			<Relationship Name="Schema">
+				<Entry>
+					<References ExternalSource="BuiltIns" Name="[dbo]" />
+				</Entry>
+			</Relationship>
+			<Annotation Type="SysCommentsObjectAnnotation">
+				<Property Name="Length" Value="927" />
+				<Property Name="StartLine" Value="1" />
+				<Property Name="StartColumn" Value="1" />
+				<Property Name="HeaderContents" Value="CREATE PROCEDURE [dbo].[PostPickReservation]&#xD;&#xA;&#x9;@ReservationId INT,&#xD;&#xA;&#x9;@CustomerId INT,&#xD;&#xA;&#x9;@NumPerson INT&#xD;&#xA;AS" />
+			</Annotation>
+		</Element>
+		<Element Type="SqlProcedure" Name="[dbo].[PostReservation]">
+			<Property Name="BodyScript">
+				<Value><![CDATA[
+BEGIN
+	INSERT INTO Reservation 
+    VALUES(@ResDate, @StartHour, @EndHour, @NumPlaceAvailable, 0, @UserId)
+END]]></Value>
+			</Property>
+			<Property Name="IsAnsiNullsOn" Value="True" />
+			<Relationship Name="BodyDependencies">
+				<Entry>
+					<References Name="[dbo].[Reservation]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[PostReservation].[@ResDate]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[PostReservation].[@StartHour]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[PostReservation].[@EndHour]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[PostReservation].[@NumPlaceAvailable]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[PostReservation].[@UserId]" />
+				</Entry>
+			</Relationship>
+			<Relationship Name="Parameters">
+				<Entry>
+					<Element Type="SqlSubroutineParameter" Name="[dbo].[PostReservation].[@ResDate]">
+						<Relationship Name="Type">
+							<Entry>
+								<Element Type="SqlTypeSpecifier">
+									<Relationship Name="Type">
+										<Entry>
+											<References ExternalSource="BuiltIns" Name="[date]" />
+										</Entry>
+									</Relationship>
+								</Element>
+							</Entry>
+						</Relationship>
+					</Element>
+				</Entry>
+				<Entry>
+					<Element Type="SqlSubroutineParameter" Name="[dbo].[PostReservation].[@StartHour]">
+						<Relationship Name="Type">
+							<Entry>
+								<Element Type="SqlTypeSpecifier">
+									<Property Name="Scale" Value="7" />
+									<Relationship Name="Type">
+										<Entry>
+											<References ExternalSource="BuiltIns" Name="[time]" />
+										</Entry>
+									</Relationship>
+								</Element>
+							</Entry>
+						</Relationship>
+					</Element>
+				</Entry>
+				<Entry>
+					<Element Type="SqlSubroutineParameter" Name="[dbo].[PostReservation].[@EndHour]">
+						<Relationship Name="Type">
+							<Entry>
+								<Element Type="SqlTypeSpecifier">
+									<Property Name="Scale" Value="7" />
+									<Relationship Name="Type">
+										<Entry>
+											<References ExternalSource="BuiltIns" Name="[time]" />
+										</Entry>
+									</Relationship>
+								</Element>
+							</Entry>
+						</Relationship>
+					</Element>
+				</Entry>
+				<Entry>
+					<Element Type="SqlSubroutineParameter" Name="[dbo].[PostReservation].[@NumPlaceAvailable]">
+						<Relationship Name="Type">
+							<Entry>
+								<Element Type="SqlTypeSpecifier">
+									<Relationship Name="Type">
+										<Entry>
+											<References ExternalSource="BuiltIns" Name="[int]" />
+										</Entry>
+									</Relationship>
+								</Element>
+							</Entry>
+						</Relationship>
+					</Element>
+				</Entry>
+				<Entry>
+					<Element Type="SqlSubroutineParameter" Name="[dbo].[PostReservation].[@UserId]">
+						<Relationship Name="Type">
+							<Entry>
+								<Element Type="SqlTypeSpecifier">
+									<Relationship Name="Type">
+										<Entry>
+											<References ExternalSource="BuiltIns" Name="[int]" />
+										</Entry>
+									</Relationship>
+								</Element>
+							</Entry>
+						</Relationship>
+					</Element>
+				</Entry>
+			</Relationship>
+			<Relationship Name="Schema">
+				<Entry>
+					<References ExternalSource="BuiltIns" Name="[dbo]" />
+				</Entry>
+			</Relationship>
+			<Annotation Type="SysCommentsObjectAnnotation">
+				<Property Name="Length" Value="262" />
+				<Property Name="StartLine" Value="1" />
+				<Property Name="StartColumn" Value="1" />
+				<Property Name="HeaderContents" Value="CREATE PROCEDURE [dbo].[PostReservation]&#xD;&#xA;&#x9;@ResDate DATE ,&#xD;&#xA;&#x9;@StartHour TIME,&#xD;&#xA;    @EndHour TIME,&#xD;&#xA;    @NumPlaceAvailable INT,&#xD;&#xA;    @UserId INT&#xD;&#xA;AS" />
+			</Annotation>
+		</Element>
+		<Element Type="SqlProcedure" Name="[dbo].[Register]">
+			<Property Name="BodyScript">
+				<Value><![CDATA[
+BEGIN
+	INSERT INTO [Customer](FirstName,LastName,PhoneNum,Email,[Password])
+	VALUES (@FirstName,@LastName,@PhoneNum,@Email,HASHBYTES('SHA2_512', dbo.GetPreHash() + @Password + dbo.GetPostHash()))
+END]]></Value>
+			</Property>
+			<Property Name="IsAnsiNullsOn" Value="True" />
+			<Relationship Name="BodyDependencies">
+				<Entry>
+					<References Name="[dbo].[Customer]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[Customer].[FirstName]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[Customer].[LastName]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[Customer].[PhoneNum]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[Customer].[Email]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[Customer].[Password]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[Register].[@FirstName]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[Register].[@LastName]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[Register].[@PhoneNum]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[Register].[@Email]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[GetPreHash]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[Register].[@Password]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[GetPostHash]" />
+				</Entry>
+			</Relationship>
+			<Relationship Name="Parameters">
+				<Entry>
+					<Element Type="SqlSubroutineParameter" Name="[dbo].[Register].[@FirstName]">
+						<Relationship Name="Type">
+							<Entry>
+								<Element Type="SqlTypeSpecifier">
+									<Property Name="Length" Value="50" />
+									<Relationship Name="Type">
+										<Entry>
+											<References ExternalSource="BuiltIns" Name="[nvarchar]" />
+										</Entry>
+									</Relationship>
+								</Element>
+							</Entry>
+						</Relationship>
+					</Element>
+				</Entry>
+				<Entry>
+					<Element Type="SqlSubroutineParameter" Name="[dbo].[Register].[@LastName]">
+						<Relationship Name="Type">
+							<Entry>
+								<Element Type="SqlTypeSpecifier">
+									<Property Name="Length" Value="50" />
+									<Relationship Name="Type">
+										<Entry>
+											<References ExternalSource="BuiltIns" Name="[nvarchar]" />
+										</Entry>
+									</Relationship>
+								</Element>
+							</Entry>
+						</Relationship>
+					</Element>
+				</Entry>
+				<Entry>
+					<Element Type="SqlSubroutineParameter" Name="[dbo].[Register].[@PhoneNum]">
+						<Relationship Name="Type">
+							<Entry>
+								<Element Type="SqlTypeSpecifier">
+									<Property Name="Length" Value="50" />
+									<Relationship Name="Type">
+										<Entry>
+											<References ExternalSource="BuiltIns" Name="[nvarchar]" />
+										</Entry>
+									</Relationship>
+								</Element>
+							</Entry>
+						</Relationship>
+					</Element>
+				</Entry>
+				<Entry>
+					<Element Type="SqlSubroutineParameter" Name="[dbo].[Register].[@Email]">
+						<Relationship Name="Type">
+							<Entry>
+								<Element Type="SqlTypeSpecifier">
+									<Property Name="Length" Value="320" />
+									<Relationship Name="Type">
+										<Entry>
+											<References ExternalSource="BuiltIns" Name="[nvarchar]" />
+										</Entry>
+									</Relationship>
+								</Element>
+							</Entry>
+						</Relationship>
+					</Element>
+				</Entry>
+				<Entry>
+					<Element Type="SqlSubroutineParameter" Name="[dbo].[Register].[@Password]">
+						<Relationship Name="Type">
+							<Entry>
+								<Element Type="SqlTypeSpecifier">
+									<Property Name="Length" Value="50" />
+									<Relationship Name="Type">
+										<Entry>
+											<References ExternalSource="BuiltIns" Name="[nvarchar]" />
+										</Entry>
+									</Relationship>
+								</Element>
+							</Entry>
+						</Relationship>
+					</Element>
+				</Entry>
+			</Relationship>
+			<Relationship Name="Schema">
+				<Entry>
+					<References ExternalSource="BuiltIns" Name="[dbo]" />
+				</Entry>
+			</Relationship>
+			<Annotation Type="SysCommentsObjectAnnotation">
+				<Property Name="Length" Value="369" />
+				<Property Name="StartLine" Value="1" />
+				<Property Name="StartColumn" Value="1" />
+				<Property Name="HeaderContents" Value="CREATE PROCEDURE [dbo].[Register]&#xD;&#xA;&#x9;@FirstName NVARCHAR(50),&#xD;&#xA;&#x9;@LastName NVARCHAR(50),&#xD;&#xA;&#x9;@PhoneNum NVARCHAR(50),&#xD;&#xA;&#x9;@Email NVARCHAR(320),&#xD;&#xA;&#x9;@Password NVARCHAR(50)&#xD;&#xA;AS" />
+			</Annotation>
+		</Element>
+		<Element Type="SqlTable" Name="[dbo].[Reservation]">
+			<Property Name="IsAnsiNullsOn" Value="True" />
+			<Relationship Name="Columns">
+				<Entry>
+					<Element Type="SqlSimpleColumn" Name="[dbo].[Reservation].[ReservationId]">
+						<Property Name="IsNullable" Value="False" />
+						<Property Name="IsIdentity" Value="True" />
+						<Relationship Name="TypeSpecifier">
+							<Entry>
+								<Element Type="SqlTypeSpecifier">
+									<Relationship Name="Type">
+										<Entry>
+											<References ExternalSource="BuiltIns" Name="[int]" />
+										</Entry>
+									</Relationship>
+								</Element>
+							</Entry>
+						</Relationship>
+						<AttachedAnnotation Disambiguator="10" />
+					</Element>
+				</Entry>
+				<Entry>
+					<Element Type="SqlSimpleColumn" Name="[dbo].[Reservation].[ResDate]">
+						<Property Name="IsNullable" Value="False" />
+						<Relationship Name="TypeSpecifier">
+							<Entry>
+								<Element Type="SqlTypeSpecifier">
+									<Relationship Name="Type">
+										<Entry>
+											<References ExternalSource="BuiltIns" Name="[datetime]" />
+										</Entry>
+									</Relationship>
+								</Element>
+							</Entry>
+						</Relationship>
+					</Element>
+				</Entry>
+				<Entry>
+					<Element Type="SqlSimpleColumn" Name="[dbo].[Reservation].[StartHour]">
+						<Property Name="IsNullable" Value="False" />
+						<Relationship Name="TypeSpecifier">
+							<Entry>
+								<Element Type="SqlTypeSpecifier">
+									<Relationship Name="Type">
+										<Entry>
+											<References ExternalSource="BuiltIns" Name="[datetime]" />
+										</Entry>
+									</Relationship>
+								</Element>
+							</Entry>
+						</Relationship>
+					</Element>
+				</Entry>
+				<Entry>
+					<Element Type="SqlSimpleColumn" Name="[dbo].[Reservation].[EndHour]">
+						<Property Name="IsNullable" Value="False" />
+						<Relationship Name="TypeSpecifier">
+							<Entry>
+								<Element Type="SqlTypeSpecifier">
+									<Relationship Name="Type">
+										<Entry>
+											<References ExternalSource="BuiltIns" Name="[datetime]" />
+										</Entry>
+									</Relationship>
+								</Element>
+							</Entry>
+						</Relationship>
+					</Element>
+				</Entry>
+				<Entry>
+					<Element Type="SqlSimpleColumn" Name="[dbo].[Reservation].[NumPlaceAvailable]">
+						<Property Name="IsNullable" Value="False" />
+						<Relationship Name="TypeSpecifier">
+							<Entry>
+								<Element Type="SqlTypeSpecifier">
+									<Relationship Name="Type">
+										<Entry>
+											<References ExternalSource="BuiltIns" Name="[int]" />
+										</Entry>
+									</Relationship>
+								</Element>
+							</Entry>
+						</Relationship>
+						<AttachedAnnotation Disambiguator="3" />
+					</Element>
+				</Entry>
+				<Entry>
+					<Element Type="SqlSimpleColumn" Name="[dbo].[Reservation].[NumPlaceReserved]">
+						<Property Name="IsNullable" Value="False" />
+						<Relationship Name="TypeSpecifier">
+							<Entry>
+								<Element Type="SqlTypeSpecifier">
+									<Relationship Name="Type">
+										<Entry>
+											<References ExternalSource="BuiltIns" Name="[int]" />
+										</Entry>
+									</Relationship>
+								</Element>
+							</Entry>
+						</Relationship>
+						<AttachedAnnotation Disambiguator="4" />
+						<AttachedAnnotation Disambiguator="5" />
+					</Element>
+				</Entry>
+				<Entry>
+					<Element Type="SqlSimpleColumn" Name="[dbo].[Reservation].[UserId]">
+						<Property Name="IsNullable" Value="False" />
+						<Relationship Name="TypeSpecifier">
+							<Entry>
+								<Element Type="SqlTypeSpecifier">
+									<Relationship Name="Type">
+										<Entry>
+											<References ExternalSource="BuiltIns" Name="[int]" />
+										</Entry>
+									</Relationship>
+								</Element>
+							</Entry>
+						</Relationship>
+					</Element>
+				</Entry>
+			</Relationship>
+			<Relationship Name="Schema">
+				<Entry>
+					<References ExternalSource="BuiltIns" Name="[dbo]" />
+				</Entry>
+			</Relationship>
+			<AttachedAnnotation Disambiguator="21" />
+		</Element>
+		<Element Type="SqlProcedure" Name="[dbo].[Update]">
+			<Property Name="BodyScript">
+				<Value><![CDATA[
+BEGIN
+	UPDATE [Customer]
+	SET 
+	[Url] = @Url,
+	[ThumbnailUrl] = @ThumbnailUrl
+	WHERE [CustomerId] = @CustomerId
+END]]></Value>
+			</Property>
+			<Property Name="IsAnsiNullsOn" Value="True" />
+			<Relationship Name="BodyDependencies">
+				<Entry>
+					<References Name="[dbo].[Customer]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[Customer].[Url]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[Update].[@Url]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[Customer].[ThumbnailUrl]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[Update].[@ThumbnailUrl]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[Customer].[CustomerId]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[Update].[@CustomerId]" />
+				</Entry>
+			</Relationship>
+			<Relationship Name="Parameters">
+				<Entry>
+					<Element Type="SqlSubroutineParameter" Name="[dbo].[Update].[@CustomerId]">
+						<Relationship Name="Type">
+							<Entry>
+								<Element Type="SqlTypeSpecifier">
+									<Relationship Name="Type">
+										<Entry>
+											<References ExternalSource="BuiltIns" Name="[int]" />
+										</Entry>
+									</Relationship>
+								</Element>
+							</Entry>
+						</Relationship>
+					</Element>
+				</Entry>
+				<Entry>
+					<Element Type="SqlSubroutineParameter" Name="[dbo].[Update].[@Url]">
+						<Relationship Name="Type">
+							<Entry>
+								<Element Type="SqlTypeSpecifier">
+									<Property Name="IsMax" Value="True" />
+									<Relationship Name="Type">
+										<Entry>
+											<References ExternalSource="BuiltIns" Name="[nvarchar]" />
+										</Entry>
+									</Relationship>
+								</Element>
+							</Entry>
+						</Relationship>
+					</Element>
+				</Entry>
+				<Entry>
+					<Element Type="SqlSubroutineParameter" Name="[dbo].[Update].[@ThumbnailUrl]">
+						<Relationship Name="Type">
+							<Entry>
+								<Element Type="SqlTypeSpecifier">
+									<Property Name="IsMax" Value="True" />
+									<Relationship Name="Type">
+										<Entry>
+											<References ExternalSource="BuiltIns" Name="[nvarchar]" />
+										</Entry>
+									</Relationship>
+								</Element>
+							</Entry>
+						</Relationship>
+					</Element>
+				</Entry>
+			</Relationship>
+			<Relationship Name="Schema">
+				<Entry>
+					<References ExternalSource="BuiltIns" Name="[dbo]" />
+				</Entry>
+			</Relationship>
+			<Annotation Type="SysCommentsObjectAnnotation">
+				<Property Name="Length" Value="229" />
+				<Property Name="StartLine" Value="1" />
+				<Property Name="StartColumn" Value="1" />
+				<Property Name="HeaderContents" Value="CREATE PROCEDURE [dbo].[Update]&#xD;&#xA;&#x9;@CustomerId Int,&#xD;&#xA;&#x9;@Url NVARCHAR(Max),&#xD;&#xA;&#x9;@ThumbnailUrl NVARCHAR(Max)&#xD;&#xA;AS" />
+			</Annotation>
+		</Element>
+		<Element Type="SqlTable" Name="[dbo].[User]">
+			<Property Name="IsAnsiNullsOn" Value="True" />
+			<Relationship Name="Columns">
+				<Entry>
+					<Element Type="SqlSimpleColumn" Name="[dbo].[User].[UserId]">
+						<Property Name="IsNullable" Value="False" />
+						<Property Name="IsIdentity" Value="True" />
+						<Relationship Name="TypeSpecifier">
+							<Entry>
+								<Element Type="SqlTypeSpecifier">
+									<Relationship Name="Type">
+										<Entry>
+											<References ExternalSource="BuiltIns" Name="[int]" />
+										</Entry>
+									</Relationship>
+								</Element>
+							</Entry>
+						</Relationship>
+						<AttachedAnnotation Disambiguator="11" />
+					</Element>
+				</Entry>
+				<Entry>
+					<Element Type="SqlSimpleColumn" Name="[dbo].[User].[Name]">
+						<Property Name="IsNullable" Value="False" />
+						<Relationship Name="TypeSpecifier">
+							<Entry>
+								<Element Type="SqlTypeSpecifier">
+									<Property Name="Length" Value="75" />
+									<Relationship Name="Type">
+										<Entry>
+											<References ExternalSource="BuiltIns" Name="[nvarchar]" />
+										</Entry>
+									</Relationship>
+								</Element>
+							</Entry>
+						</Relationship>
+					</Element>
+				</Entry>
+				<Entry>
+					<Element Type="SqlSimpleColumn" Name="[dbo].[User].[Email]">
+						<Relationship Name="TypeSpecifier">
+							<Entry>
+								<Element Type="SqlTypeSpecifier">
+									<Property Name="Length" Value="150" />
+									<Relationship Name="Type">
+										<Entry>
+											<References ExternalSource="BuiltIns" Name="[nvarchar]" />
+										</Entry>
+									</Relationship>
+								</Element>
+							</Entry>
+						</Relationship>
+					</Element>
+				</Entry>
+				<Entry>
+					<Element Type="SqlSimpleColumn" Name="[dbo].[User].[Password]">
+						<Relationship Name="TypeSpecifier">
+							<Entry>
+								<Element Type="SqlTypeSpecifier">
+									<Property Name="Length" Value="50" />
+									<Relationship Name="Type">
+										<Entry>
+											<References ExternalSource="BuiltIns" Name="[nvarchar]" />
+										</Entry>
+									</Relationship>
+								</Element>
+							</Entry>
+						</Relationship>
+					</Element>
+				</Entry>
+				<Entry>
+					<Element Type="SqlSimpleColumn" Name="[dbo].[User].[Description]">
+						<Property Name="IsNullable" Value="False" />
+						<Relationship Name="TypeSpecifier">
+							<Entry>
+								<Element Type="SqlTypeSpecifier">
+									<Property Name="Length" Value="500" />
+									<Relationship Name="Type">
+										<Entry>
+											<References ExternalSource="BuiltIns" Name="[nvarchar]" />
+										</Entry>
+									</Relationship>
+								</Element>
+							</Entry>
+						</Relationship>
+					</Element>
+				</Entry>
+				<Entry>
+					<Element Type="SqlSimpleColumn" Name="[dbo].[User].[AdresseStreet]">
+						<Property Name="IsNullable" Value="False" />
+						<Relationship Name="TypeSpecifier">
+							<Entry>
+								<Element Type="SqlTypeSpecifier">
+									<Property Name="Length" Value="500" />
+									<Relationship Name="Type">
+										<Entry>
+											<References ExternalSource="BuiltIns" Name="[nvarchar]" />
+										</Entry>
+									</Relationship>
+								</Element>
+							</Entry>
+						</Relationship>
+					</Element>
+				</Entry>
+				<Entry>
+					<Element Type="SqlSimpleColumn" Name="[dbo].[User].[AdresseNum]">
+						<Property Name="IsNullable" Value="False" />
+						<Relationship Name="TypeSpecifier">
+							<Entry>
+								<Element Type="SqlTypeSpecifier">
+									<Relationship Name="Type">
+										<Entry>
+											<References ExternalSource="BuiltIns" Name="[int]" />
+										</Entry>
+									</Relationship>
+								</Element>
+							</Entry>
+						</Relationship>
+					</Element>
+				</Entry>
+				<Entry>
+					<Element Type="SqlSimpleColumn" Name="[dbo].[User].[AdresseCity]">
+						<Property Name="IsNullable" Value="False" />
+						<Relationship Name="TypeSpecifier">
+							<Entry>
+								<Element Type="SqlTypeSpecifier">
+									<Property Name="Length" Value="75" />
+									<Relationship Name="Type">
+										<Entry>
+											<References ExternalSource="BuiltIns" Name="[nvarchar]" />
+										</Entry>
+									</Relationship>
+								</Element>
+							</Entry>
+						</Relationship>
+					</Element>
+				</Entry>
+				<Entry>
+					<Element Type="SqlSimpleColumn" Name="[dbo].[User].[AdresseZip]">
+						<Property Name="IsNullable" Value="False" />
+						<Relationship Name="TypeSpecifier">
+							<Entry>
+								<Element Type="SqlTypeSpecifier">
+									<Relationship Name="Type">
+										<Entry>
+											<References ExternalSource="BuiltIns" Name="[int]" />
+										</Entry>
+									</Relationship>
+								</Element>
+							</Entry>
+						</Relationship>
+					</Element>
+				</Entry>
+				<Entry>
+					<Element Type="SqlSimpleColumn" Name="[dbo].[User].[PhoneNum]">
+						<Property Name="IsNullable" Value="False" />
+						<Relationship Name="TypeSpecifier">
+							<Entry>
+								<Element Type="SqlTypeSpecifier">
+									<Property Name="Length" Value="50" />
+									<Relationship Name="Type">
+										<Entry>
+											<References ExternalSource="BuiltIns" Name="[nvarchar]" />
+										</Entry>
+									</Relationship>
+								</Element>
+							</Entry>
+						</Relationship>
+					</Element>
+				</Entry>
+				<Entry>
+					<Element Type="SqlSimpleColumn" Name="[dbo].[User].[Latitude]">
+						<Property Name="IsNullable" Value="False" />
+						<Relationship Name="TypeSpecifier">
+							<Entry>
+								<Element Type="SqlTypeSpecifier">
+									<Property Name="Scale" Value="7" />
+									<Property Name="Precision" Value="11" />
+									<Relationship Name="Type">
+										<Entry>
+											<References ExternalSource="BuiltIns" Name="[decimal]" />
+										</Entry>
+									</Relationship>
+								</Element>
+							</Entry>
+						</Relationship>
+					</Element>
+				</Entry>
+				<Entry>
+					<Element Type="SqlSimpleColumn" Name="[dbo].[User].[Longitude]">
+						<Property Name="IsNullable" Value="False" />
+						<Relationship Name="TypeSpecifier">
+							<Entry>
+								<Element Type="SqlTypeSpecifier">
+									<Property Name="Scale" Value="7" />
+									<Property Name="Precision" Value="11" />
+									<Relationship Name="Type">
+										<Entry>
+											<References ExternalSource="BuiltIns" Name="[decimal]" />
+										</Entry>
+									</Relationship>
+								</Element>
+							</Entry>
+						</Relationship>
+					</Element>
+				</Entry>
+				<Entry>
+					<Element Type="SqlSimpleColumn" Name="[dbo].[User].[Rating]">
+						<Relationship Name="TypeSpecifier">
+							<Entry>
+								<Element Type="SqlTypeSpecifier">
+									<Property Name="Scale" Value="2" />
+									<Property Name="Precision" Value="5" />
+									<Relationship Name="Type">
+										<Entry>
+											<References ExternalSource="BuiltIns" Name="[decimal]" />
+										</Entry>
+									</Relationship>
+								</Element>
+							</Entry>
+						</Relationship>
+					</Element>
+				</Entry>
+				<Entry>
+					<Element Type="SqlSimpleColumn" Name="[dbo].[User].[Url]">
+						<Property Name="IsNullable" Value="False" />
+						<Relationship Name="TypeSpecifier">
+							<Entry>
+								<Element Type="SqlTypeSpecifier">
+									<Property Name="IsMax" Value="True" />
+									<Relationship Name="Type">
+										<Entry>
+											<References ExternalSource="BuiltIns" Name="[nvarchar]" />
+										</Entry>
+									</Relationship>
+								</Element>
+							</Entry>
+						</Relationship>
+					</Element>
+				</Entry>
+				<Entry>
+					<Element Type="SqlSimpleColumn" Name="[dbo].[User].[ThumbnailUrl]">
+						<Relationship Name="TypeSpecifier">
+							<Entry>
+								<Element Type="SqlTypeSpecifier">
+									<Property Name="IsMax" Value="True" />
+									<Relationship Name="Type">
+										<Entry>
+											<References ExternalSource="BuiltIns" Name="[nvarchar]" />
+										</Entry>
+									</Relationship>
+								</Element>
+							</Entry>
+						</Relationship>
+					</Element>
+				</Entry>
+			</Relationship>
+			<Relationship Name="Schema">
+				<Entry>
+					<References ExternalSource="BuiltIns" Name="[dbo]" />
+				</Entry>
+			</Relationship>
+		</Element>
+		<Element Type="SqlView" Name="[dbo].[V_Event]">
+			<Property Name="QueryScript">
+				<Value><![CDATA[ SELECT ED.EventId, U.UserId, U.[Name], ED.[Description], U.[Url], U.ThumbnailUrl, U.Rating
+	FROM [Event] E, EventDetail ED, [User] U
+	WHERE E.EventId = ED.EventId
+	and E.UserId = U.UserId]]></Value>
+			</Property>
+			<Property Name="IsAnsiNullsOn" Value="True" />
+			<Relationship Name="Columns">
+				<Entry>
+					<Element Type="SqlComputedColumn" Name="[dbo].[V_Event].[EventId]">
+						<Relationship Name="ExpressionDependencies">
+							<Entry>
+								<References Name="[dbo].[EventDetail].[EventId]" />
+							</Entry>
+						</Relationship>
+					</Element>
+				</Entry>
+				<Entry>
+					<Element Type="SqlComputedColumn" Name="[dbo].[V_Event].[UserId]">
+						<Relationship Name="ExpressionDependencies">
+							<Entry>
+								<References Name="[dbo].[User].[UserId]" />
+							</Entry>
+						</Relationship>
+					</Element>
+				</Entry>
+				<Entry>
+					<Element Type="SqlComputedColumn" Name="[dbo].[V_Event].[Name]">
+						<Relationship Name="ExpressionDependencies">
+							<Entry>
+								<References Name="[dbo].[User].[Name]" />
+							</Entry>
+						</Relationship>
+					</Element>
+				</Entry>
+				<Entry>
+					<Element Type="SqlComputedColumn" Name="[dbo].[V_Event].[Description]">
+						<Relationship Name="ExpressionDependencies">
+							<Entry>
+								<References Name="[dbo].[EventDetail].[Description]" />
+							</Entry>
+						</Relationship>
+					</Element>
+				</Entry>
+				<Entry>
+					<Element Type="SqlComputedColumn" Name="[dbo].[V_Event].[Url]">
+						<Relationship Name="ExpressionDependencies">
+							<Entry>
+								<References Name="[dbo].[User].[Url]" />
+							</Entry>
+						</Relationship>
+					</Element>
+				</Entry>
+				<Entry>
+					<Element Type="SqlComputedColumn" Name="[dbo].[V_Event].[ThumbnailUrl]">
+						<Relationship Name="ExpressionDependencies">
+							<Entry>
+								<References Name="[dbo].[User].[ThumbnailUrl]" />
+							</Entry>
+						</Relationship>
+					</Element>
+				</Entry>
+				<Entry>
+					<Element Type="SqlComputedColumn" Name="[dbo].[V_Event].[Rating]">
+						<Relationship Name="ExpressionDependencies">
+							<Entry>
+								<References Name="[dbo].[User].[Rating]" />
+							</Entry>
+						</Relationship>
+					</Element>
+				</Entry>
+			</Relationship>
+			<Relationship Name="QueryDependencies">
+				<Entry>
+					<References Name="[dbo].[Event]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[EventDetail]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[User]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[EventDetail].[EventId]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[User].[UserId]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[User].[Name]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[EventDetail].[Description]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[User].[Url]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[User].[ThumbnailUrl]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[User].[Rating]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[Event].[EventId]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[Event].[UserId]" />
+				</Entry>
+			</Relationship>
+			<Relationship Name="Schema">
+				<Entry>
+					<References ExternalSource="BuiltIns" Name="[dbo]" />
+				</Entry>
+			</Relationship>
+			<Annotation Type="SysCommentsObjectAnnotation">
+				<Property Name="Length" Value="223" />
+				<Property Name="StartLine" Value="1" />
+				<Property Name="StartColumn" Value="1" />
+				<Property Name="HeaderContents" Value="CREATE VIEW [dbo].[V_Event]&#xD;&#xA;&#x9;AS" />
+			</Annotation>
+		</Element>
+		<Element Type="SqlView" Name="[dbo].[V_User]">
+			<Property Name="QueryScript">
+				<Value><![CDATA[ SELECT U.UserId, U.[Name], U.[Description], 
+	U.PhoneNum, U.AdresseStreet, U.AdresseNum,
+	U.AdresseCity, U.AdresseZip, U.Latitude, 
+	U.Longitude, U.Rating, U.[Url], U.ThumbnailUrl
+	FROM [User] U]]></Value>
+			</Property>
+			<Property Name="IsAnsiNullsOn" Value="True" />
+			<Relationship Name="Columns">
+				<Entry>
+					<Element Type="SqlComputedColumn" Name="[dbo].[V_User].[UserId]">
+						<Relationship Name="ExpressionDependencies">
+							<Entry>
+								<References Name="[dbo].[User].[UserId]" />
+							</Entry>
+						</Relationship>
+					</Element>
+				</Entry>
+				<Entry>
+					<Element Type="SqlComputedColumn" Name="[dbo].[V_User].[Name]">
+						<Relationship Name="ExpressionDependencies">
+							<Entry>
+								<References Name="[dbo].[User].[Name]" />
+							</Entry>
+						</Relationship>
+					</Element>
+				</Entry>
+				<Entry>
+					<Element Type="SqlComputedColumn" Name="[dbo].[V_User].[Description]">
+						<Relationship Name="ExpressionDependencies">
+							<Entry>
+								<References Name="[dbo].[User].[Description]" />
+							</Entry>
+						</Relationship>
+					</Element>
+				</Entry>
+				<Entry>
+					<Element Type="SqlComputedColumn" Name="[dbo].[V_User].[PhoneNum]">
+						<Relationship Name="ExpressionDependencies">
+							<Entry>
+								<References Name="[dbo].[User].[PhoneNum]" />
+							</Entry>
+						</Relationship>
+					</Element>
+				</Entry>
+				<Entry>
+					<Element Type="SqlComputedColumn" Name="[dbo].[V_User].[AdresseStreet]">
+						<Relationship Name="ExpressionDependencies">
+							<Entry>
+								<References Name="[dbo].[User].[AdresseStreet]" />
+							</Entry>
+						</Relationship>
+					</Element>
+				</Entry>
+				<Entry>
+					<Element Type="SqlComputedColumn" Name="[dbo].[V_User].[AdresseNum]">
+						<Relationship Name="ExpressionDependencies">
+							<Entry>
+								<References Name="[dbo].[User].[AdresseNum]" />
+							</Entry>
+						</Relationship>
+					</Element>
+				</Entry>
+				<Entry>
+					<Element Type="SqlComputedColumn" Name="[dbo].[V_User].[AdresseCity]">
+						<Relationship Name="ExpressionDependencies">
+							<Entry>
+								<References Name="[dbo].[User].[AdresseCity]" />
+							</Entry>
+						</Relationship>
+					</Element>
+				</Entry>
+				<Entry>
+					<Element Type="SqlComputedColumn" Name="[dbo].[V_User].[AdresseZip]">
+						<Relationship Name="ExpressionDependencies">
+							<Entry>
+								<References Name="[dbo].[User].[AdresseZip]" />
+							</Entry>
+						</Relationship>
+					</Element>
+				</Entry>
+				<Entry>
+					<Element Type="SqlComputedColumn" Name="[dbo].[V_User].[Latitude]">
+						<Relationship Name="ExpressionDependencies">
+							<Entry>
+								<References Name="[dbo].[User].[Latitude]" />
+							</Entry>
+						</Relationship>
+					</Element>
+				</Entry>
+				<Entry>
+					<Element Type="SqlComputedColumn" Name="[dbo].[V_User].[Longitude]">
+						<Relationship Name="ExpressionDependencies">
+							<Entry>
+								<References Name="[dbo].[User].[Longitude]" />
+							</Entry>
+						</Relationship>
+					</Element>
+				</Entry>
+				<Entry>
+					<Element Type="SqlComputedColumn" Name="[dbo].[V_User].[Rating]">
+						<Relationship Name="ExpressionDependencies">
+							<Entry>
+								<References Name="[dbo].[User].[Rating]" />
+							</Entry>
+						</Relationship>
+					</Element>
+				</Entry>
+				<Entry>
+					<Element Type="SqlComputedColumn" Name="[dbo].[V_User].[Url]">
+						<Relationship Name="ExpressionDependencies">
+							<Entry>
+								<References Name="[dbo].[User].[Url]" />
+							</Entry>
+						</Relationship>
+					</Element>
+				</Entry>
+				<Entry>
+					<Element Type="SqlComputedColumn" Name="[dbo].[V_User].[ThumbnailUrl]">
+						<Relationship Name="ExpressionDependencies">
+							<Entry>
+								<References Name="[dbo].[User].[ThumbnailUrl]" />
+							</Entry>
+						</Relationship>
+					</Element>
+				</Entry>
+			</Relationship>
+			<Relationship Name="QueryDependencies">
+				<Entry>
+					<References Name="[dbo].[User]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[User].[UserId]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[User].[Name]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[User].[Description]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[User].[PhoneNum]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[User].[AdresseStreet]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[User].[AdresseNum]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[User].[AdresseCity]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[User].[AdresseZip]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[User].[Latitude]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[User].[Longitude]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[User].[Rating]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[User].[Url]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[User].[ThumbnailUrl]" />
+				</Entry>
+			</Relationship>
+			<Relationship Name="Schema">
+				<Entry>
+					<References ExternalSource="BuiltIns" Name="[dbo]" />
+				</Entry>
+			</Relationship>
+			<Annotation Type="SysCommentsObjectAnnotation">
+				<Property Name="Length" Value="230" />
+				<Property Name="StartLine" Value="1" />
+				<Property Name="StartColumn" Value="1" />
+				<Property Name="HeaderContents" Value="CREATE VIEW [dbo].[V_User]&#xD;&#xA;&#x9;AS" />
+			</Annotation>
+		</Element>
+	</Model>
+</DataSchemaModel>

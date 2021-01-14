@@ -1,0 +1,10 @@
+C:\Users\kaiis\source\repos\PickUp\PickUp.Database\bin\Debug\PickUp.Database.dacpac
+C:\Users\kaiis\source\repos\PickUp\PickUp.Database\bin\Debug\PickUp.Database.dll
+C:\Users\kaiis\source\repos\PickUp\PickUp.Database\bin\Debug\PickUp.Database.pdb
+C:\Users\kaiis\source\repos\PickUp\PickUp.Database\obj\Debug\Model.xml
+C:\Users\kaiis\source\repos\PickUp\PickUp.Database\obj\Debug\refactor.xml
+C:\Users\kaiis\source\repos\PickUp\PickUp.Database\obj\Debug\postdeploy.sql
+C:\Users\kaiis\source\repos\PickUp\PickUp.Database\obj\Debug\predeploy.sql
+C:\Users\kaiis\source\repos\PickUp\PickUp.Database\obj\Debug\PickUp.Database.dll
+C:\Users\kaiis\source\repos\PickUp\PickUp.Database\obj\Debug\PickUp.Database.pdb
+C:\Users\kaiis\source\repos\PickUp\PickUp.Database\obj\Debug\PickUp.Database.sqlprojAssemblyReference.cache

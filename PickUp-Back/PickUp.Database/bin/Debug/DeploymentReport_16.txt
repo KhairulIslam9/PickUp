@@ -1,0 +1,52 @@
+﻿** Met en surbrillance
+     Tables à reconstruire
+       Aucun
+     Index ordonnés en clusters à supprimer
+       Aucun
+     Index ordonnés en clusters à créer.
+       Aucun
+     Problèmes de données possibles
+       Aucun
+
+** Actions de l'utilisateur
+     Créer
+       [dbo].[Category] (Table)
+       [dbo].[CategoryDetail] (Table)
+       [dbo].[Customer] (Table)
+       [dbo].[Event] (Table)
+       [dbo].[EventDetail] (Table)
+       [dbo].[PickReservation] (Table)
+       [dbo].[Reservation] (Table)
+       [dbo].[User] (Table)
+       Contrainte par défaut: contrainte sans nom sur [dbo].[Reservation] (Contrainte par défaut)
+       [dbo].[FK_Category_User] (Clé étrangère)
+       [dbo].[FK_Category_CategoryDetail] (Clé étrangère)
+       [dbo].[FK_Event_User] (Clé étrangère)
+       [dbo].[FK_Event_EventDetail] (Clé étrangère)
+       [dbo].[FK_PickReservation_Reservation] (Clé étrangère)
+       [dbo].[FK_PickReservation_Customer] (Clé étrangère)
+       [dbo].[FK_Reservation_User] (Clé étrangère)
+       Contrainte de validation: contrainte sans nom sur [dbo].[Reservation] (Contrainte de validation)
+       Contrainte de validation: contrainte sans nom sur [dbo].[Reservation] (Contrainte de validation)
+       [dbo].[V_Event] (Vue)
+       [dbo].[V_User] (Vue)
+       [dbo].[GetPostHash] (Fonction)
+       [dbo].[GetPreHash] (Fonction)
+       [dbo].[DeletePickReservation] (Procédure)
+       [dbo].[GetAllCategory] (Procédure)
+       [dbo].[GetAllEvent] (Procédure)
+       [dbo].[GetAllReservationByUser] (Procédure)
+       [dbo].[GetAllUser] (Procédure)
+       [dbo].[GetAllUserAvailable] (Procédure)
+       [dbo].[GetEventByUser] (Procédure)
+       [dbo].[GetReservationByCustomer] (Procédure)
+       [dbo].[GetReservationByUser] (Procédure)
+       [dbo].[GetUserByCategory] (Procédure)
+       [dbo].[GetUserById] (Procédure)
+       [dbo].[Login] (Procédure)
+       [dbo].[PostPickReservation] (Procédure)
+       [dbo].[PostReservation] (Procédure)
+       [dbo].[Register] (Procédure)
+       [dbo].[Update] (Procédure)
+
+** Actions de support
