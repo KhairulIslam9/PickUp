@@ -36,7 +36,7 @@ const MapScreen = (props) => {
               onPress={() => {
                 props.detailProAction(marker),
                   props.navigation.navigate(routes.USER_PROFILE_SCREEN, {
-                    userId: marker.id,
+                    userId: marker.userId,
                   });
               }}
             >
@@ -50,10 +50,16 @@ const MapScreen = (props) => {
                   paddingHorizontal: 10,
                 }}
               >
-                <Image
-                  style={{ width: 75, height: 75 }}
-                  source={{ uri: marker.url }}
-                />
+                <Text
+                  style={{
+                    flex: 1,
+                  }}
+                >
+                  <Image
+                    style={{ width: 75, height: 75 }}
+                    source={{ uri: marker.url }}
+                  />
+                </Text>
                 <View
                   style={{
                     flex: 1,

@@ -6,20 +6,19 @@ import AppText from "./AppText";
 function ReservationCard({
   backgroundColor = colors.secondary,
   duration,
-  hourStart,
-  hourEnd,
+  starthour,
+  endHour,
   numberAvailable,
-  numberReserved,
   onPress,
 }) {
   return (
     <TouchableOpacity activeOpacity={0.6} onPress={onPress}>
       <View style={[styles.container, { backgroundColor }]}>
         <AppText style={{ fontSize: 24 }}>
-          {hourStart} - {hourEnd}
+          {starthour.slice(0, 5)} - {endHour.slice(0, 5)}
         </AppText>
         <AppText>Durée : {duration}</AppText>
-        <AppText>Place Disponible: {numberAvailable - numberReserved}</AppText>
+        <AppText>Place Disponible: {numberAvailable}</AppText>
       </View>
     </TouchableOpacity>
   );

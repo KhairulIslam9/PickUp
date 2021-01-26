@@ -93,14 +93,18 @@
     <Build Include="Programmability\StoredProcedures\User\GetUserById.sql" />
     <Build Include="Programmability\StoredProcedures\PickReservation\PostPickReservation.sql" />
     <Build Include="Programmability\StoredProcedures\PickReservation\DeletePickReservation.sql" />
-    <Build Include="Scripts\Script.PostDeployment1.sql" />
     <Build Include="Tables\Event.sql" />
     <Build Include="Tables\EventDetail.sql" />
     <Build Include="Views\V_Event.sql" />
     <Build Include="Programmability\StoredProcedures\Event\GetAllEvent.sql" />
     <Build Include="Programmability\StoredProcedures\Event\GetEventByUser.sql" />
+    <Build Include="Programmability\Functions\ConvertTime.sql" />
+    <Build Include="Programmability\Functions\ConvertDate.sql" />
   </ItemGroup>
   <ItemGroup>
     <None Include="PickUp.Database.publish.xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <PostDeploy Include="Scripts\Script.PostDeployment1.sql" />
   </ItemGroup>
 </Project>

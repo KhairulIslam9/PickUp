@@ -7,7 +7,8 @@ import { Provider } from "react-redux";
 import AuthContext from "./src/auth/contex";
 import HomeNavigator from "./src/containers/navigators/HomeNavigator";
 import configureStore from "./src/store/configureStore";
-import authStorage from "./src/auth/storage";
+import authStorage from "./src/auth/secureStorage";
+import OfflineNotice from "./src/components/OfflineNotice";
 
 export default function App() {
   const [customer, setCustomer] = useState();
@@ -22,13 +23,16 @@ export default function App() {
   }, []);
 
   return (
-    <AuthContext.Provider value={{ customer, setCustomer }}>
-      <Provider store={configureStore}>
-        <NavigationContainer>
-          <HomeNavigator />
-        </NavigationContainer>
-      </Provider>
-    </AuthContext.Provider>
+    <>
+      <OfflineNotice />
+      <AuthContext.Provider value={{ customer, setCustomer }}>
+        <Provider store={configureStore}>
+          <NavigationContainer>
+            <HomeNavigator />
+          </NavigationContainer>
+        </Provider>
+      </AuthContext.Provider>
+    </>
   );
 }
 

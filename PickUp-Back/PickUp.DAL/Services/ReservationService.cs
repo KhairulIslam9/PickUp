@@ -25,13 +25,15 @@ namespace PickUp.DAL.Services
                 reader["ResDate"].ToString(),
                 reader["StartHour"].ToString(),
                 reader["EndHour"].ToString(),
-                (int)reader["NumPlaceAvailable"]
+                (int)reader["NumPerson"],
+                reader["Url"].ToString()
                 );
         }
         private ReservationCustomer ConverterCustomer2(SqlDataReader reader)
         {
             return new ReservationCustomer(
                 (int)reader["ReservationId"],
+                (int)reader["UserId"],
                 reader["ResDate"].ToString(),
                 reader["StartHour"].ToString(),
                 reader["EndHour"].ToString(),

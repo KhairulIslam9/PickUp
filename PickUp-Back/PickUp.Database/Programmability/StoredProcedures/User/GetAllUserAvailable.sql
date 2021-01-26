@@ -4,9 +4,9 @@ AS
 BEGIN
 	SELECT U.*
 	FROM [V_User] U
-	WHERE U.UserId in ( SELECT R.UserId
-							FROM Reservation R
-							WHERE  CONVERT(varchar,GETDATE(), 8)
-							BETWEEN CONVERT(varchar, R.[StartHour], 8) AND CONVERT(varchar, R.[EndHour], 8) 
-							AND CONVERT(varchar, R.[ResDate], 101) = CONVERT(varchar, GETDATE(), 101))
+	WHERE U.UserId in ( SELECT DISTINCT R.UserId
+						FROM Reservation R
+						WHERE dbo.ConvertTime(GETDATE())
+						BETWEEN dbo.ConvertTime(R.[StartHour]) AND dbo.ConvertTime(R.[EndHour]) 
+						AND dbo.ConvertDate(R.[ResDate]) = dbo.ConvertDate(GETDATE()))
 END

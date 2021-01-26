@@ -6,16 +6,28 @@ const getAllReservationUser = (index) =>
 const getReservationCustomer = (index) =>
   client.get("/Reservation/Customer/" + index);
 
-const addReservation = (reservationId, userId, numPerson) =>
+const addReservation = (reservationId, customerId, numPerson) =>
   client.post("/Reservation/PickReservation", {
-    id: reservationId,
-    userId: userId,
-    dateInput: new Date(),
+    reservationId: reservationId,
+    customerId: customerId,
     numPerson: numPerson,
   });
+
+const deletePickReservation = (reservationId, customerId) =>
+  client.delete(
+    "/Reservation/PickReservation/Delete",
+    {},
+    {
+      data: {
+        reservationId: reservationId,
+        customerId: customerId,
+      },
+    }
+  );
 
 export default {
   getAllReservationUser,
   getReservationCustomer,
   addReservation,
+  deletePickReservation,
 };

@@ -12,23 +12,25 @@ namespace PickUp.DAL.Models
         public string PhoneNum { get; set; }
         public string Email { get; set; }
         public string Password { get; set; }
+        public string DeviceToken { get; set; }
         public string Url { get; set; }
         public string ThumbnailUrl { get; set; }
 
         public Customer(string firstName, string lastName, string phoneNum, 
-            string email, string password, string url, string thumbnailUrl)
+            string email, string password, string deviceToken, string url, string thumbnailUrl)
         {
             FirstName = firstName;
             LastName = lastName;
             PhoneNum = phoneNum;
             Email = email;
             Password = password;
+            DeviceToken = deviceToken;
             Url = url;
             ThumbnailUrl = thumbnailUrl;
         }
-        internal Customer(int customerId, string firstName, string lastName, 
-            string phoneNum, string email, string url, string thumbnailUrl)
-            :this(firstName, lastName, phoneNum, email, null, url, thumbnailUrl)
+        internal Customer(int customerId, string firstName, string lastName,
+            string phoneNum, string email, string deviceToken, string url, string thumbnailUrl)
+            :this(firstName, lastName, phoneNum, email, null, deviceToken, url, thumbnailUrl)
         {
             CustomerId = customerId;
         }

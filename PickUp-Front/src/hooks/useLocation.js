@@ -19,7 +19,6 @@ export default () => {
 
   useEffect(() => {
     getLocation();
-    console.log("mec", location);
   }, []);
 
   return location;

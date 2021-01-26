@@ -1,7 +1,7 @@
 import { useContext } from "react";
 
 import AuthContext from "./contex";
-import authStorage from "./storage";
+import authStorage from "./secureStorage";
 
 export default useAuth = () => {
   const { customer, setCustomer } = useContext(AuthContext);
@@ -17,5 +17,8 @@ export default useAuth = () => {
     authStorage.removeToken();
   };
 
-  return { logIn, logOut, setCustomer, customer };
+  const update = (authToken) => {
+    authStorage.storeToken(authToken);
+  };
+  return { logIn, logOut, update, setCustomer, customer };
 };

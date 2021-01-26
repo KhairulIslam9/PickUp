@@ -101,25 +101,6 @@
 					<Element Type="SqlIndexedColumnSpecification">
 						<Relationship Name="Column">
 							<Entry>
-								<References Name="[dbo].[Customer].[CustomerId]" />
-							</Entry>
-						</Relationship>
-					</Element>
-				</Entry>
-			</Relationship>
-			<Relationship Name="DefiningTable">
-				<Entry>
-					<References Name="[dbo].[Customer]" />
-				</Entry>
-			</Relationship>
-			<Annotation Type="SqlInlineConstraintAnnotation" Disambiguator="6" />
-		</Element>
-		<Element Type="SqlPrimaryKeyConstraint">
-			<Relationship Name="ColumnSpecifications">
-				<Entry>
-					<Element Type="SqlIndexedColumnSpecification">
-						<Relationship Name="Column">
-							<Entry>
 								<References Name="[dbo].[Category].[CategoryId]" />
 							</Entry>
 						</Relationship>
@@ -131,7 +112,7 @@
 					<References Name="[dbo].[Category]" />
 				</Entry>
 			</Relationship>
-			<Annotation Type="SqlInlineConstraintAnnotation" Disambiguator="7" />
+			<Annotation Type="SqlInlineConstraintAnnotation" Disambiguator="6" />
 		</Element>
 		<Element Type="SqlPrimaryKeyConstraint">
 			<Relationship Name="ColumnSpecifications">
@@ -150,7 +131,7 @@
 					<References Name="[dbo].[CategoryDetail]" />
 				</Entry>
 			</Relationship>
-			<Annotation Type="SqlInlineConstraintAnnotation" Disambiguator="8" />
+			<Annotation Type="SqlInlineConstraintAnnotation" Disambiguator="7" />
 		</Element>
 		<Element Type="SqlPrimaryKeyConstraint">
 			<Relationship Name="ColumnSpecifications">
@@ -178,7 +159,7 @@
 					<References Name="[dbo].[PickReservation]" />
 				</Entry>
 			</Relationship>
-			<Annotation Type="SqlInlineConstraintAnnotation" Disambiguator="9" />
+			<Annotation Type="SqlInlineConstraintAnnotation" Disambiguator="8" />
 		</Element>
 		<Element Type="SqlPrimaryKeyConstraint">
 			<Relationship Name="ColumnSpecifications">
@@ -197,7 +178,7 @@
 					<References Name="[dbo].[Reservation]" />
 				</Entry>
 			</Relationship>
-			<Annotation Type="SqlInlineConstraintAnnotation" Disambiguator="10" />
+			<Annotation Type="SqlInlineConstraintAnnotation" Disambiguator="9" />
 		</Element>
 		<Element Type="SqlPrimaryKeyConstraint">
 			<Relationship Name="ColumnSpecifications">
@@ -216,7 +197,7 @@
 					<References Name="[dbo].[User]" />
 				</Entry>
 			</Relationship>
-			<Annotation Type="SqlInlineConstraintAnnotation" Disambiguator="11" />
+			<Annotation Type="SqlInlineConstraintAnnotation" Disambiguator="10" />
 		</Element>
 		<Element Type="SqlPrimaryKeyConstraint">
 			<Relationship Name="ColumnSpecifications">
@@ -244,7 +225,7 @@
 					<References Name="[dbo].[Event]" />
 				</Entry>
 			</Relationship>
-			<Annotation Type="SqlInlineConstraintAnnotation" Disambiguator="12" />
+			<Annotation Type="SqlInlineConstraintAnnotation" Disambiguator="11" />
 		</Element>
 		<Element Type="SqlPrimaryKeyConstraint">
 			<Relationship Name="ColumnSpecifications">
@@ -261,6 +242,25 @@
 			<Relationship Name="DefiningTable">
 				<Entry>
 					<References Name="[dbo].[EventDetail]" />
+				</Entry>
+			</Relationship>
+			<Annotation Type="SqlInlineConstraintAnnotation" Disambiguator="12" />
+		</Element>
+		<Element Type="SqlPrimaryKeyConstraint">
+			<Relationship Name="ColumnSpecifications">
+				<Entry>
+					<Element Type="SqlIndexedColumnSpecification">
+						<Relationship Name="Column">
+							<Entry>
+								<References Name="[dbo].[Customer].[CustomerId]" />
+							</Entry>
+						</Relationship>
+					</Element>
+				</Entry>
+			</Relationship>
+			<Relationship Name="DefiningTable">
+				<Entry>
+					<References Name="[dbo].[Customer]" />
 				</Entry>
 			</Relationship>
 			<Annotation Type="SqlInlineConstraintAnnotation" Disambiguator="13" />
@@ -302,7 +302,7 @@
 								</Element>
 							</Entry>
 						</Relationship>
-						<AttachedAnnotation Disambiguator="7" />
+						<AttachedAnnotation Disambiguator="6" />
 					</Element>
 				</Entry>
 				<Entry>
@@ -364,7 +364,7 @@
 								</Element>
 							</Entry>
 						</Relationship>
-						<AttachedAnnotation Disambiguator="8" />
+						<AttachedAnnotation Disambiguator="7" />
 					</Element>
 				</Entry>
 				<Entry>
@@ -535,7 +535,7 @@ END]]></Value>
 								</Element>
 							</Entry>
 						</Relationship>
-						<AttachedAnnotation Disambiguator="6" />
+						<AttachedAnnotation Disambiguator="13" />
 					</Element>
 				</Entry>
 				<Entry>
@@ -617,6 +617,22 @@ END]]></Value>
 									<Relationship Name="Type">
 										<Entry>
 											<References ExternalSource="BuiltIns" Name="[varbinary]" />
+										</Entry>
+									</Relationship>
+								</Element>
+							</Entry>
+						</Relationship>
+					</Element>
+				</Entry>
+				<Entry>
+					<Element Type="SqlSimpleColumn" Name="[dbo].[Customer].[DeviceToken]">
+						<Relationship Name="TypeSpecifier">
+							<Entry>
+								<Element Type="SqlTypeSpecifier">
+									<Property Name="Length" Value="320" />
+									<Relationship Name="Type">
+										<Entry>
+											<References ExternalSource="BuiltIns" Name="[nvarchar]" />
 										</Entry>
 									</Relationship>
 								</Element>
@@ -830,7 +846,7 @@ END]]></Value>
 					<References ExternalSource="BuiltIns" Name="[dbo]" />
 				</Entry>
 			</Relationship>
-			<AttachedAnnotation Disambiguator="12" />
+			<AttachedAnnotation Disambiguator="11" />
 			<Annotation Type="SqlInlineConstraintAnnotation" Disambiguator="17" />
 			<Annotation Type="SqlInlineConstraintAnnotation" Disambiguator="18" />
 		</Element>
@@ -852,7 +868,7 @@ END]]></Value>
 								</Element>
 							</Entry>
 						</Relationship>
-						<AttachedAnnotation Disambiguator="13" />
+						<AttachedAnnotation Disambiguator="12" />
 					</Element>
 				</Entry>
 				<Entry>
@@ -1116,17 +1132,19 @@ BEGIN
 	-- Format 8 => HH:mm:SS
 	-- Format 101 => DD/MM/YYYY
 	-- DATEADD va lire la doc
-	SELECT  R.ReservationId, 
+	SELECT  R.ReservationId AS ReservationId,
+	R.UserId AS UserId,
 	dbo.ConvertDate(R.ResDate) AS ResDate,
 	dbo.ConvertTime(R.StartHour) AS StartHour,
 	dbo.ConvertTime(R.EndHour) AS EndHour,
 	R.NumPlaceAvailable-R.NumPlaceReserved as NumPlaceAvailable
 	FROM Reservation R
 	WHERE R.UserId = @UserId
-	AND R.ResDate > DATEADD(DAY, -1, GETDATE())
+	AND CONVERT(nvarchar, R.ResDate, 101)  > CONVERT(nvarchar, DATEADD(DAY, -1, GETDATE()), 101)
 	AND R.NumPlaceReserved < R.NumPlaceAvailable
 	EXCEPT 
-	SELECT R.ReservationId, 
+	SELECT R.ReservationId AS ReservationId, 
+	R.UserId AS UserId,
 	dbo.ConvertDate(R.ResDate) AS ResDate,
 	dbo.ConvertTime(R.StartHour) AS StartHour,
 	dbo.ConvertTime(R.EndHour) AS EndHour,
@@ -1145,6 +1163,9 @@ END]]></Value>
 				</Entry>
 				<Entry>
 					<References Name="[dbo].[Reservation].[ReservationId]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[Reservation].[UserId]" />
 				</Entry>
 				<Entry>
 					<References Name="[dbo].[Reservation].[ResDate]" />
@@ -1175,6 +1196,12 @@ END]]></Value>
 				</Entry>
 				<Entry>
 					<References Name="[dbo].[GetAllReservationByUser].[@UserId]" />
+				</Entry>
+				<Entry>
+					<References ExternalSource="BuiltIns" Name="[nvarchar]" />
+				</Entry>
+				<Entry>
+					<References ExternalSource="BuiltIns" Name="[nvarchar]" />
 				</Entry>
 				<Entry>
 					<References Name="[dbo].[ConvertTime]" />
@@ -1209,7 +1236,7 @@ END]]></Value>
 				</Entry>
 			</Relationship>
 			<Annotation Type="SysCommentsObjectAnnotation">
-				<Property Name="Length" Value="960" />
+				<Property Name="Length" Value="1086" />
 				<Property Name="StartLine" Value="1" />
 				<Property Name="StartColumn" Value="1" />
 				<Property Name="HeaderContents" Value="CREATE PROCEDURE [dbo].[GetAllReservationByUser]&#xD;&#xA;&#x9;@UserId INT&#xD;&#xA;AS" />
@@ -1247,11 +1274,11 @@ END]]></Value>
 BEGIN
 	SELECT U.*
 	FROM [V_User] U
-	WHERE U.UserId in ( SELECT R.UserId
-							FROM Reservation R
-							WHERE  CONVERT(varchar,GETDATE(), 8)
-							BETWEEN CONVERT(varchar, R.[StartHour], 8) AND CONVERT(varchar, R.[EndHour], 8) 
-							AND CONVERT(varchar, R.[ResDate], 101) = CONVERT(varchar, GETDATE(), 101))
+	WHERE U.UserId in ( SELECT DISTINCT R.UserId
+						FROM Reservation R
+						WHERE dbo.ConvertTime(GETDATE())
+						BETWEEN dbo.ConvertTime(R.[StartHour]) AND dbo.ConvertTime(R.[EndHour]) 
+						AND dbo.ConvertDate(R.[ResDate]) = dbo.ConvertDate(GETDATE()))
 END]]></Value>
 			</Property>
 			<Property Name="IsAnsiNullsOn" Value="True" />
@@ -1269,28 +1296,19 @@ END]]></Value>
 					<References Name="[dbo].[Reservation].[UserId]" />
 				</Entry>
 				<Entry>
-					<References ExternalSource="BuiltIns" Name="[varchar]" />
-				</Entry>
-				<Entry>
-					<References ExternalSource="BuiltIns" Name="[varchar]" />
+					<References Name="[dbo].[ConvertTime]" />
 				</Entry>
 				<Entry>
 					<References Name="[dbo].[Reservation].[StartHour]" />
 				</Entry>
 				<Entry>
-					<References ExternalSource="BuiltIns" Name="[varchar]" />
-				</Entry>
-				<Entry>
 					<References Name="[dbo].[Reservation].[EndHour]" />
 				</Entry>
 				<Entry>
-					<References ExternalSource="BuiltIns" Name="[varchar]" />
+					<References Name="[dbo].[ConvertDate]" />
 				</Entry>
 				<Entry>
 					<References Name="[dbo].[Reservation].[ResDate]" />
-				</Entry>
-				<Entry>
-					<References ExternalSource="BuiltIns" Name="[varchar]" />
 				</Entry>
 			</Relationship>
 			<Relationship Name="Schema">
@@ -1299,7 +1317,7 @@ END]]></Value>
 				</Entry>
 			</Relationship>
 			<Annotation Type="SysCommentsObjectAnnotation">
-				<Property Name="Length" Value="375" />
+				<Property Name="Length" Value="356" />
 				<Property Name="StartLine" Value="1" />
 				<Property Name="StartColumn" Value="1" />
 				<Property Name="HeaderContents" Value="CREATE PROCEDURE [dbo].[GetAllUserAvailable]&#xD;&#xA;&#xD;&#xA;AS" />
@@ -1788,7 +1806,7 @@ END]]></Value>
 				<Value><![CDATA[
 BEGIN
 	SELECT C.[CustomerId], C.[FirstName], C.[LastName], C.[PhoneNum], 
-	C.[Email], C.[Url], C.[ThumbnailUrl]
+	C.[Email],C.DeviceToken, C.[Url], C.[ThumbnailUrl]
 	FROM [Customer] C
 	WHERE [Email] = @Email 
 	and [Password] = HASHBYTES('SHA2_512', dbo.GetPreHash() + @Password + dbo.GetPostHash());
@@ -1813,6 +1831,9 @@ END]]></Value>
 				</Entry>
 				<Entry>
 					<References Name="[dbo].[Customer].[Email]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[Customer].[DeviceToken]" />
 				</Entry>
 				<Entry>
 					<References Name="[dbo].[Customer].[Url]" />
@@ -1879,7 +1900,7 @@ END]]></Value>
 				</Entry>
 			</Relationship>
 			<Annotation Type="SysCommentsObjectAnnotation">
-				<Property Name="Length" Value="341" />
+				<Property Name="Length" Value="355" />
 				<Property Name="StartLine" Value="1" />
 				<Property Name="StartColumn" Value="1" />
 				<Property Name="HeaderContents" Value="CREATE PROCEDURE [dbo].[Login]&#xD;&#xA;&#x9;@Email NVARCHAR(320),&#xD;&#xA;&#x9;@Password NVARCHAR(50)&#xD;&#xA;AS" />
@@ -1958,7 +1979,7 @@ END]]></Value>
 					<References ExternalSource="BuiltIns" Name="[dbo]" />
 				</Entry>
 			</Relationship>
-			<AttachedAnnotation Disambiguator="9" />
+			<AttachedAnnotation Disambiguator="8" />
 			<AttachedAnnotation Disambiguator="20" />
 			<AttachedAnnotation Disambiguator="19" />
 		</Element>
@@ -2112,7 +2133,7 @@ END]]></Value>
 				<Value><![CDATA[
 BEGIN
 	INSERT INTO Reservation 
-    VALUES(@ResDate, @StartHour, @EndHour, @NumPlaceAvailable, 0, @UserId)
+    VALUES(CONVERT(date, @ResDate),CONVERT(time, @StartHour), CONVERT(time, @EndHour), @NumPlaceAvailable, 0, @UserId)
 END]]></Value>
 			</Property>
 			<Property Name="IsAnsiNullsOn" Value="True" />
@@ -2121,10 +2142,19 @@ END]]></Value>
 					<References Name="[dbo].[Reservation]" />
 				</Entry>
 				<Entry>
+					<References ExternalSource="BuiltIns" Name="[date]" />
+				</Entry>
+				<Entry>
 					<References Name="[dbo].[PostReservation].[@ResDate]" />
 				</Entry>
 				<Entry>
+					<References ExternalSource="BuiltIns" Name="[time]" />
+				</Entry>
+				<Entry>
 					<References Name="[dbo].[PostReservation].[@StartHour]" />
+				</Entry>
+				<Entry>
+					<References ExternalSource="BuiltIns" Name="[time]" />
 				</Entry>
 				<Entry>
 					<References Name="[dbo].[PostReservation].[@EndHour]" />
@@ -2142,9 +2172,10 @@ END]]></Value>
 						<Relationship Name="Type">
 							<Entry>
 								<Element Type="SqlTypeSpecifier">
+									<Property Name="Length" Value="50" />
 									<Relationship Name="Type">
 										<Entry>
-											<References ExternalSource="BuiltIns" Name="[date]" />
+											<References ExternalSource="BuiltIns" Name="[nvarchar]" />
 										</Entry>
 									</Relationship>
 								</Element>
@@ -2157,10 +2188,10 @@ END]]></Value>
 						<Relationship Name="Type">
 							<Entry>
 								<Element Type="SqlTypeSpecifier">
-									<Property Name="Scale" Value="7" />
+									<Property Name="Length" Value="50" />
 									<Relationship Name="Type">
 										<Entry>
-											<References ExternalSource="BuiltIns" Name="[time]" />
+											<References ExternalSource="BuiltIns" Name="[nvarchar]" />
 										</Entry>
 									</Relationship>
 								</Element>
@@ -2173,10 +2204,10 @@ END]]></Value>
 						<Relationship Name="Type">
 							<Entry>
 								<Element Type="SqlTypeSpecifier">
-									<Property Name="Scale" Value="7" />
+									<Property Name="Length" Value="50" />
 									<Relationship Name="Type">
 										<Entry>
-											<References ExternalSource="BuiltIns" Name="[time]" />
+											<References ExternalSource="BuiltIns" Name="[nvarchar]" />
 										</Entry>
 									</Relationship>
 								</Element>
@@ -2221,10 +2252,10 @@ END]]></Value>
 				</Entry>
 			</Relationship>
 			<Annotation Type="SysCommentsObjectAnnotation">
-				<Property Name="Length" Value="262" />
+				<Property Name="Length" Value="330" />
 				<Property Name="StartLine" Value="1" />
 				<Property Name="StartColumn" Value="1" />
-				<Property Name="HeaderContents" Value="CREATE PROCEDURE [dbo].[PostReservation]&#xD;&#xA;&#x9;@ResDate DATE ,&#xD;&#xA;&#x9;@StartHour TIME,&#xD;&#xA;    @EndHour TIME,&#xD;&#xA;    @NumPlaceAvailable INT,&#xD;&#xA;    @UserId INT&#xD;&#xA;AS" />
+				<Property Name="HeaderContents" Value="CREATE PROCEDURE [dbo].[PostReservation]&#xD;&#xA;&#x9;@ResDate NVARCHAR(50) ,&#xD;&#xA;&#x9;@StartHour NVARCHAR(50),&#xD;&#xA;    @EndHour NVARCHAR(50),&#xD;&#xA;    @NumPlaceAvailable INT,&#xD;&#xA;    @UserId INT&#xD;&#xA;AS" />
 			</Annotation>
 		</Element>
 		<Element Type="SqlProcedure" Name="[dbo].[Register]">
@@ -2389,7 +2420,7 @@ END]]></Value>
 								</Element>
 							</Entry>
 						</Relationship>
-						<AttachedAnnotation Disambiguator="10" />
+						<AttachedAnnotation Disambiguator="9" />
 					</Element>
 				</Entry>
 				<Entry>
@@ -2400,7 +2431,7 @@ END]]></Value>
 								<Element Type="SqlTypeSpecifier">
 									<Relationship Name="Type">
 										<Entry>
-											<References ExternalSource="BuiltIns" Name="[datetime]" />
+											<References ExternalSource="BuiltIns" Name="[date]" />
 										</Entry>
 									</Relationship>
 								</Element>
@@ -2414,9 +2445,10 @@ END]]></Value>
 						<Relationship Name="TypeSpecifier">
 							<Entry>
 								<Element Type="SqlTypeSpecifier">
+									<Property Name="Scale" Value="7" />
 									<Relationship Name="Type">
 										<Entry>
-											<References ExternalSource="BuiltIns" Name="[datetime]" />
+											<References ExternalSource="BuiltIns" Name="[time]" />
 										</Entry>
 									</Relationship>
 								</Element>
@@ -2430,9 +2462,10 @@ END]]></Value>
 						<Relationship Name="TypeSpecifier">
 							<Entry>
 								<Element Type="SqlTypeSpecifier">
+									<Property Name="Scale" Value="7" />
 									<Relationship Name="Type">
 										<Entry>
-											<References ExternalSource="BuiltIns" Name="[datetime]" />
+											<References ExternalSource="BuiltIns" Name="[time]" />
 										</Entry>
 									</Relationship>
 								</Element>
@@ -2613,7 +2646,7 @@ END]]></Value>
 								</Element>
 							</Entry>
 						</Relationship>
-						<AttachedAnnotation Disambiguator="11" />
+						<AttachedAnnotation Disambiguator="10" />
 					</Element>
 				</Entry>
 				<Entry>

@@ -51,7 +51,7 @@ namespace PickUp.API.Controllers
             if (ModelState.IsValid)
             {
                 _customerService.Register(new Customer(form.LastName, form.FirstName,
-                    form.PhoneNum, form.Email, form.Password, null, null));
+                    form.PhoneNum, form.Email, form.Password, null, null, null));
                 return Ok();
             }
 

@@ -5,17 +5,19 @@ BEGIN
 	-- Format 8 => HH:mm:SS
 	-- Format 101 => DD/MM/YYYY
 	-- DATEADD va lire la doc
-	SELECT  R.ReservationId, 
+	SELECT  R.ReservationId AS ReservationId,
+	R.UserId AS UserId,
 	dbo.ConvertDate(R.ResDate) AS ResDate,
 	dbo.ConvertTime(R.StartHour) AS StartHour,
 	dbo.ConvertTime(R.EndHour) AS EndHour,
 	R.NumPlaceAvailable-R.NumPlaceReserved as NumPlaceAvailable
 	FROM Reservation R
 	WHERE R.UserId = @UserId
-	AND R.ResDate > DATEADD(DAY, -1, GETDATE())
+	AND CONVERT(nvarchar, R.ResDate, 101)  > CONVERT(nvarchar, DATEADD(DAY, -1, GETDATE()), 101)
 	AND R.NumPlaceReserved < R.NumPlaceAvailable
 	EXCEPT 
-	SELECT R.ReservationId, 
+	SELECT R.ReservationId AS ReservationId, 
+	R.UserId AS UserId,
 	dbo.ConvertDate(R.ResDate) AS ResDate,
 	dbo.ConvertTime(R.StartHour) AS StartHour,
 	dbo.ConvertTime(R.EndHour) AS EndHour,

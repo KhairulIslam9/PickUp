@@ -1,6 +1,6 @@
 import { create } from "apisauce";
 
-import authStorage from "../auth/storage";
+import authStorage from "../auth/secureStorage";
 // import cache from "../utility/cache";
 import settings from "../config/settings";
 

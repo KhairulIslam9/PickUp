@@ -79,11 +79,12 @@ namespace PickUp.API.Infrastructure.Security
                     payload.TryGetValue("FirstName", out object firstName);
                     payload.TryGetValue("PhoneNum", out object phoneNum);
                     payload.TryGetValue("Email", out object email);
+                    payload.TryGetValue("DeviceToken", out object deviceToken);
                     payload.TryGetValue("Url", out object url);
                     payload.TryGetValue("ThumbnailUrl", out object thumbnailUrl);
 
                     user = new ApiCustomer(int.Parse((string)id), (string)lastName, (string)firstName,
-                         (string)phoneNum, (string)email,(string)url, (string)thumbnailUrl);
+                         (string)phoneNum, (string)email, (string)deviceToken, (string)url, (string)thumbnailUrl);
                 }
             }
 

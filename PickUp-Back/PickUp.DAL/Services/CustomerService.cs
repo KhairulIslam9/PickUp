@@ -26,6 +26,7 @@ namespace PickUp.DAL.Services
                 reader["LastName"].ToString(),
                 reader["PhoneNum"].ToString(),
                 reader["Email"].ToString(),
+                reader["DeviceToken"].ToString(),
                 reader["Url"].ToString(),
                 reader["ThumbnailUrl"].ToString()
                 );

@@ -24,7 +24,7 @@ namespace PickUp.DAL.Services
                 (int)reader["UserId"],
                 reader["Name"].ToString(),
                 reader["Description"].ToString(),
-                reader["Logo"].ToString(),
+                reader["Url"].ToString(),
                 reader["ThumbnailUrl"].ToString(),
                 (decimal)reader["Rating"]);
         }

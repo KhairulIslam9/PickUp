@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import { View, FlatList, ScrollView, StyleSheet } from "react-native";
 import { connect } from "react-redux";
 
@@ -13,6 +13,7 @@ import useApi from "../../../hooks/useApi";
 import AppActivityIndicator from "../../../components/AppActivityIndicator";
 
 const UserScreen = (props) => {
+  const [refreshing, setRefreshing] = useState(false);
   const getCategoryApi = useApi(categoryApi.getCategory);
   const getUserApi = useApi(userApi.getUser);
   const getUserByCategoryApi = useApi(userApi.getUserByCategory);
@@ -83,6 +84,11 @@ const UserScreen = (props) => {
         </View>
         <FlatList
           contentContainerStyle={{ paddingBottom: 40 }}
+          refreshing={refreshing}
+          onRefresh={() => {
+            getCategory();
+            getUser();
+          }}
           data={props.listPro}
           keyExtractor={(item) => item.userId.toString()}
           renderItem={({ item, index }) => (

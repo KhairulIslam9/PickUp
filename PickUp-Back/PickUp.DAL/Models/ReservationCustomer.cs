@@ -12,12 +12,13 @@ namespace PickUp.DAL.Models
         public string ResDate { get; set; }
         public string StartHour { get; set; }
         public string EndHour { get; set; }
+        public string Url { get; set; }
         public int NumPlaceAvailable { get; set; }
 
         
         public ReservationCustomer(int userId, string name,
             string resDate, string startHour, string endHour,
-            int numPlaceAvailable)
+            int numPlaceAvailable, string url)
         {
             UserId = userId;
             Name = name;
@@ -25,17 +26,28 @@ namespace PickUp.DAL.Models
             StartHour = startHour;
             EndHour = endHour;
             NumPlaceAvailable = numPlaceAvailable;
+            Url = url;
         }
 
         internal ReservationCustomer(int reservationId, int userId,
             string name, string resDate, string startHour,
-            string endHour, int numPlaceAvailable):
-            this(userId, name, resDate, startHour, endHour, numPlaceAvailable)
+            string endHour, int numPlaceAvailable, string url):
+            this(userId, name, resDate, startHour, endHour, numPlaceAvailable, url)
         {
             ReservationId = reservationId;
         }
-        public ReservationCustomer(int userId, string resDate,
+        public ReservationCustomer(int reservationId, int userId, string resDate,
             string startHour, string endHour, int numPlaceAvailable)
+        {
+            ReservationId = reservationId;
+            UserId = userId;
+            ResDate = resDate;
+            StartHour = startHour;
+            EndHour = endHour;
+            NumPlaceAvailable = numPlaceAvailable;
+        }
+        public ReservationCustomer(string resDate,
+            string startHour, string endHour, int numPlaceAvailable, int userId)
         {
             UserId = userId;
             ResDate = resDate;

@@ -15,8 +15,4 @@
     <ProjectReference Include="..\PickUp.DAL\PickUp.DAL.csproj" />
   </ItemGroup>
 
-  <ItemGroup>
-    <Folder Include="Infrastructure\Attributes\" />
-  </ItemGroup>
-
 </Project>

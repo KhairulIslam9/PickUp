@@ -3,19 +3,19 @@ import { View, StyleSheet } from "react-native";
 import { Modal, Portal, Provider } from "react-native-paper";
 import { connect } from "react-redux";
 import { Agenda } from "react-native-calendars";
-import UploadScreen from "../UploadScreen";
-import NumericInput from "react-native-numeric-input";
 
 import { reservationProAction } from "../../../store/actions/reservationProAction";
 import AppActivityIndicator from "../../../components/AppActivityIndicator";
 import ReservationCard from "../../../components/ReservationCard";
 import reservationApi from "../../../api/reservation";
+import UploadScreen from "../UploadScreen";
 import useAuth from "../../../auth/useAuth";
 import useApi from "../../../hooks/useApi";
 import AppButton from "../../../components/AppButton";
 import AppText from "../../../components/AppText";
 import colors from "../../../config/colors";
-import Screen from "../../../components/Screen";
+import routes from "../../../config/routes";
+import NumberSpinner from "../../../components/NumberSpinner";
 
 function UserProfileScreen(props) {
   const [visible, setVisible] = useState(false);
@@ -30,7 +30,7 @@ function UserProfileScreen(props) {
   const date = today.toISOString().split("T")[0];
   const time = today.toTimeString().split(" ")[0];
   const { customer } = useAuth();
-  const getReservationApi = useApi(reservationApi.getReservationPro);
+  const getReservationApi = useApi(reservationApi.getAllReservationUser);
 
   useEffect(() => {
     getReservationPro(props.route.params.userId);
@@ -58,35 +58,34 @@ function UserProfileScreen(props) {
       numPerson,
       (progress) => setProgress(progress)
     );
+
     // DB renvoie -1 quand il y a une erreur
     if (!result.ok || result.data < 0) {
       setUploadVisible(false);
       return alert("Vous ne pouvez pas reserver cette reservation");
     }
-    props.navigation.navigate("Pro");
-    console.log(result.data);
+    props.navigation.navigate(routes.USER_SCREEN);
   };
 
   const getData = () => {
     // Met la date dans le bon format
     const mappeData = props.listReservationPro.map((post) => {
-      const newDate = new Date(post.dateRes);
+      const newDate = new Date(post.resDate);
       const date = newDate.toISOString().split("T")[0];
-
       return {
         ...post,
-        dateRes: date,
+        resDate: date,
       };
     });
     // Met l'iteams dans le bon format pour le calendrier item={"date":
     //                                                                [{name:""}]}
     const reduced = mappeData.reduce((accumulator, currentItem) => {
-      const { dateRes, ...reste } = currentItem;
+      const { resDate, ...reste } = currentItem;
 
-      if (!accumulator[dateRes]) {
-        accumulator[dateRes] = [];
+      if (!accumulator[resDate]) {
+        accumulator[resDate] = [];
       }
-      accumulator[dateRes].push(reste);
+      accumulator[resDate].push(reste);
 
       return accumulator;
     }, {});
@@ -98,14 +97,13 @@ function UserProfileScreen(props) {
       <ReservationCard
         key={index}
         onPress={() => {
-          setReservtionId(item.id);
+          setReservtionId(item.reservationId);
           setVisible(true);
         }}
-        duration={item.heureFin - item.heureDeb}
-        hourStart={item.heureDeb}
-        hourEnd={item.heureFin}
+        duration={item.endHour - item.startHour}
+        starthour={item.startHour}
+        endHour={item.endHour}
         numberAvailable={item.numPlaceAvailable}
-        numberReserved={item.numPlaceReserved}
       />
     );
   };
@@ -119,10 +117,10 @@ function UserProfileScreen(props) {
           visible={uploadVisible}
         />
         <AppActivityIndicator visible={getReservationApi.loading} />
-        <Screen>
+        <View style={styles.container}>
           <Agenda
             items={reservations}
-            minDate={"2021-01-01"}
+            minDate={date}
             maxDate={"2021-05-10"}
             pastScrollRange={1}
             futureScrollRange={1}
@@ -147,7 +145,7 @@ function UserProfileScreen(props) {
                     title="Se connecter"
                     onPress={() => {
                       modalClose();
-                      props.navigation.navigate("Login");
+                      props.navigation.navigate(routes.LOGIN_SCREEN);
                     }}
                   ></AppButton>
                 </>
@@ -155,29 +153,26 @@ function UserProfileScreen(props) {
               {customer && (
                 <View style={styles.detailsContainer}>
                   <AppText style={styles.text}>Nombre de personne :</AppText>
-                  <NumericInput
-                    valueType="integer"
+                  <NumberSpinner
                     value={numPerson}
-                    maxValue={10}
-                    minValue={1}
-                    rounded={true}
-                    type="up-down"
-                    onChange={(value) => {
-                      setNumPerson(value);
-                    }}
+                    onChange={(num) => setNumPerson(num)}
                   />
                   <AppButton
                     title="Valider"
                     onPress={() => {
                       modalClose();
-                      addPickReservation(reservationId, customer.id, numPerson);
+                      addPickReservation(
+                        reservationId,
+                        customer.customerId,
+                        numPerson
+                      );
                     }}
                   />
                 </View>
               )}
             </Modal>
           </Portal>
-        </Screen>
+        </View>
       </Provider>
     </>
   );
@@ -194,6 +189,9 @@ const mapDispatchToProps = {
 };
 
 const styles = StyleSheet.create({
+  container: {
+    flex: 1,
+  },
   detailsContainer: {
     justifyContent: "center",
     alignItems: "center",

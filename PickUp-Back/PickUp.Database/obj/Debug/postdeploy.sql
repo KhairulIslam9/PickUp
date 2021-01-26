@@ -10,11 +10,31 @@ Modèle de script de post-déploiement
 --------------------------------------------------------------------------------------
 */
 
+
 insert into [User]
 values('O tacos','','','Beaucoup de gras gras gras gras ','Place de la Station',24,'Namur',5000
 ,081261690,50.468213038565295, 4.861837781971672,3.4, 
 'http://192.168.1.37:9000/images/oTacosLogo-1610444096259_full.jpg',
 'http://192.168.1.37:9000/images/oTacosLogo-1610444096259_thumb.jpg');
+
+insert into [User]
+values('Brico','','','Le mexicans est bon mais le cul n aime pas trop','Chaussée de Charleroi',18,'Namur',5000,081748431
+,50.473963472874246, 4.858430418478774,4.2,
+'http://192.168.1.37:9000/images/Brico-1-1610444286658_full.jpg',
+'http://192.168.1.37:9000/images/Brico-1-1610444286658_thumb.jpg');
+
+insert into [User]
+values('H&M','','','Le mexicans est bon mais le cul n aime pas trop','Rue de l Ange',24,'Namur',5000,081748431
+,50.48095043885839, 4.867587673188419,4.2,
+'http://192.168.1.37:9000/images/H&M-1610444609577_full.jpg',
+'http://192.168.1.37:9000/images/H&M-1610444609577_thumb.jpg');
+
+insert into [User]
+values('Ikea','','','Le mexicans est bon mais le cul n aime pas trop','Rue de l Ange',24,'Namur',5000,081748431
+,50.927671604784706, 4.479075707231383,4.2,
+'http://192.168.1.37:9000/images/ikea-1610444650172_full.jpg',
+'http://192.168.1.37:9000/images/ikea-1610444650172_thumb.jpg');
+
 
 insert into [User]
 values('Quick','','','Degeu mais ya rien dautre','Chaussée de Liège',519,'Jambes',5100,081308110
@@ -59,9 +79,10 @@ values('Mc Donalds','','','Le M c est le gout, viens comme t es gros','Avenue de
 'http://192.168.1.37:9000/images/McDonalds3-1610444117718_thumb.jpg');
 insert into [User]
 values('Mex & Go','','','Le mexicans est bon mais le cul n aime pas trop','Rue Basse Marcelle',15,'Namur',5000,081748431
-,50.473963472874246, 4.858430418478774,4.2,
+,50.46586855147612, 4.844339034551454,4.2,
 'http://192.168.1.37:9000/images/MexAndGo4-1610444107368_full.jpg',
 'http://192.168.1.37:9000/images/MexAndGo4-1610444107368_thumb.jpg');
+
 
 
 insert into CategoryDetail

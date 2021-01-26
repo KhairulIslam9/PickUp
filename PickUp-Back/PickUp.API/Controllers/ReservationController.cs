@@ -65,8 +65,8 @@ namespace PickUp.API.Controllers
             {
                 try
                 {   
-                    return Ok(_reservationService.Insert(new ReservationCustomer(r.UserId, r.ResDate,
-                                    r.StartHour, r.EndHour, r.NumPlaceAvailable)));
+                    return Ok(_reservationService.Insert(new ReservationCustomer(r.ResDate,
+                                    r.StartHour, r.EndHour, r.NumPlaceAvailable, r.UserId)));
                 }
                 catch (Exception e)
                 {

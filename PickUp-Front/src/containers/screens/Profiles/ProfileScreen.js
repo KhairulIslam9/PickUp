@@ -14,7 +14,6 @@ import useAuth from "../../../auth/useAuth";
 import useApi from "../../../hooks/useApi";
 import customerApi from "../../../api/customer";
 import ProfileText from "../../../components/ProfileText";
-import routes from "../../../config/routes";
 import { useState } from "react";
 import colors from "../../../config/colors";
 
@@ -31,7 +30,7 @@ const validationSchema = Yup.object().shape({
 
 const ProfileScreen = (props) => {
   const [modalVisible, setModalVisible] = useState(false);
-  const { customer } = useAuth();
+  const { customer, update } = useAuth();
   const imageUploadApi = useApi(customerApi.imageUpload);
   const customerUpdateApi = useApi(customerApi.update);
 
@@ -52,6 +51,7 @@ const ProfileScreen = (props) => {
       return;
     }
     customer.url = image[0].url;
+    update(customer);
     setModalVisible(false);
   };
 
@@ -75,10 +75,19 @@ const ProfileScreen = (props) => {
             : avatarDefault,
         }}
       />
-      <ProfileText icon={"account"} value={customer.firstName} />
-      <ProfileText icon={"account"} value={customer.lastName} />
-      <ProfileText icon={"cellphone"} value={customer.phoneNum} />
-      <ProfileText icon={"email"} value={customer.email} />
+      <ProfileText
+        icon={"account"}
+        value={customer ? customer.firstName : "Nom"}
+      />
+      <ProfileText
+        icon={"account"}
+        value={customer ? customer.lastName : "Prénom"}
+      />
+      <ProfileText
+        icon={"cellphone"}
+        value={customer ? customer.phoneNum : "Numéro de téléphone"}
+      />
+      <ProfileText icon={"email"} value={customer ? customer.email : "Email"} />
       <TouchableOpacity style={styles.icon} onPress={handlePress}>
         <MaterialCommunityIcons name="account-edit" size={50} />
       </TouchableOpacity>

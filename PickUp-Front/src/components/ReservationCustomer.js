@@ -19,18 +19,11 @@ function ReservationCustomer({
           <Image style={styles.image} source={{ uri: item.url }} />
           <View style={styles.details}>
             <AppText style={styles.title}>{item.name}</AppText>
+            <AppText>{item.resDate}</AppText>
             <AppText>
-              {new Date(item.resDate).toISOString().split("T")[0]}
+              {item.startHour.slice(0, 5)} -{item.endHour.slice(0, 5)}
             </AppText>
-            <AppText>
-              {new Date(item.startHour).toTimeString().split(" ")[0]} -
-              {new Date(item.endHour).toTimeString().split(" ")[0]}
-            </AppText>
-            <AppText>
-              Durée :{" "}
-              {new Date(item.startHour).toTimeString().split(" ")[0] -
-                new Date(item.endHour).toTimeString().split(" ")[0]}
-            </AppText>
+            <AppText>Durée : {item.startHour - item.endHour}</AppText>
             <AppText>Nombre de Personne: {item.numPlaceAvailable}</AppText>
           </View>
           <MaterialCommunityIcons
@@ -60,7 +53,7 @@ const styles = StyleSheet.create({
   imageContainer: {},
   image: {
     width: 100,
-    height: 100,
+    height: "100%",
     borderRadius: 15,
   },
   title: {
